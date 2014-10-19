@@ -1,4 +1,4 @@
-package be.uantwerpen.SS.Client;
+package be.uantwerpen.SS.client.view;
 
 public class View {
 	
