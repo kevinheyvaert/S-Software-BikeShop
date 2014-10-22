@@ -2,6 +2,8 @@ package be.uantwerpen.SS.client.model;
 
 import java.rmi.RemoteException;
 
+import be.uantwerpen.SS.client.view.CommandLine;
+
 
 public class BikeShopMain {
 	public static void main(String[] args) {
@@ -14,5 +16,7 @@ public class BikeShopMain {
 		
 		System.out.println("Product " +(numberOfProductsInStock+1) + " toegevoegd");
 		bikeShopStock1.saveStockToXml();
+		
+		
     }
 }

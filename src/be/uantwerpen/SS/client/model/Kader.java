@@ -9,7 +9,7 @@ public class Kader extends Product {
 	private boolean graverenDefaultWaarde;
 	@XmlElement(name="kleur")
 	private String kleur;
-	
+
 	public Kader(String iD, String naam) {
 		super(iD, naam);
 		graverenDefaultWaarde = false;
