@@ -2,7 +2,7 @@ package be.uantwerpen.SS.client.model;
 
 import java.rmi.RemoteException;
 
-import be.uantwerpen.SS.client.view.CommandLine;
+import be.uantwerpen.SS.client.view.MainCommandLine;
 
 
 public class BikeShopMain {
