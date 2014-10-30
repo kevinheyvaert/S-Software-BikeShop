@@ -2,8 +2,11 @@ package be.uantwerpen.SS.client.view;
 
 import java.util.Scanner;
 
+import be.uantwerpen.SS.client.model.Basisonderdelen;
 import be.uantwerpen.SS.client.model.Kader;
+import be.uantwerpen.SS.client.model.Remmen;
 import be.uantwerpen.SS.client.model.Stock;
+import be.uantwerpen.SS.client.model.Wiel;
 
 public class MainCommandLine {
 	
@@ -13,6 +16,7 @@ public class MainCommandLine {
 	Stock bikeShopStock1 = new Stock(); //TODO : From BikeshopMain --> beter implementeren 
 	public int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock(); //TODO : From BikeshopMain --> beter implementeren
 	
+	public int aantalKaders, aantalRemmen, aantalBasisonderdelen, aantalWielen;
 	
 	private static final String lines = "\n-----------------------------------\n";
 
@@ -94,18 +98,58 @@ public class MainCommandLine {
 		
     	if (typeProduct .equals("Kader"))
     	{
-    		System.out.println("doe iets");
     		for(int i=0; i < amount; i++)
     		{
     		numberOfProductsInStock = numberOfProductsInStock + 1;	
-    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader_test"+(numberOfProductsInStock+1));
+    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader");
     		bikeShopStock1.addProduct(nieuwekader);
     		
-    		}
     		
+    		}
+    		aantalKaders = aantalKaders + amount;
     	}
-    	System.out.println("Product <" + typeProduct +"> toegevoegd met hoeveelheid "+(amount) + ". Totaal aantal producten in stock zijn : "+numberOfProductsInStock);
     	
+    	if (typeProduct .equals("Wiel"))
+    	{
+    		for(int i=0; i < amount; i++)
+    		{
+    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+    		Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel");
+    		bikeShopStock1.addProduct(nieuwWiel);
+    		
+    		
+    		}
+    		aantalWielen = aantalWielen + amount;
+    	}
+    	
+    	if (typeProduct .equals("Remmen"))
+    	{
+    		for(int i=0; i < amount; i++)
+    		{
+    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+    		Remmen nieuweRemmen = new Remmen(""+(numberOfProductsInStock+1), "remmen");
+    		bikeShopStock1.addProduct(nieuweRemmen);
+    		
+    		
+    		}
+    		aantalRemmen = aantalRemmen + amount;
+    	}
+    	
+    	if (typeProduct .equals("Basisonderdelen"))
+    	{
+    		for(int i=0; i < amount; i++)
+    		{
+    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+(numberOfProductsInStock+1), "basisonderdelen");
+    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
+    		
+    		
+    		}
+    		aantalBasisonderdelen = aantalBasisonderdelen + amount;
+    	}
+    	
+    	System.out.println("Product <" + typeProduct +"> toegevoegd met hoeveelheid "+(amount) + ". Totaal aantal producten in stock zijn : "+numberOfProductsInStock);
+    	System.out.println("Stockoverview : \n Aantal kaders : "+aantalKaders+ "\n Aantal Wielen : " + aantalWielen + "\n Aantal Remmen : " + aantalRemmen + "\n Aantal Basisonderedelen : " + aantalBasisonderdelen);
     }
     
     public void save()
