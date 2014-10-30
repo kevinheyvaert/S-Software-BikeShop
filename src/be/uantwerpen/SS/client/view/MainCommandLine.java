@@ -1,5 +1,6 @@
 package be.uantwerpen.SS.client.view;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
@@ -85,8 +86,14 @@ public class MainCommandLine {
     public void load()
     {
     	bikeShopStock1.getStockFromXml();
+    	
+    	for(int i=0;i<bikeShopStock1.getProductList().size();i++){
+    	    System.out.println(bikeShopStock1.getProductList().get(i));
+    	} 
+    	
+    	//System.out.println(Arrays.toString(bikeShopStock1.getProductList().toArray()));
     	System.out.println("Data geload");
-    	//int aantalKaders = Collections.frequency( bikeShopStock1, Kader);
+    	int aantalKaders = Collections.frequency(bikeShopStock1.getProductList(), "Kader");
     	//int aantalWielen = Collections.frequency((Collection<?>) bikeShopStock1, Wiel);
     	//int aantalBasisonderdelen = Collections.frequency((Collection<?>) bikeShopStock1, Basisonderdelen);
     	//int aantalRemmen = Collections.frequency((Collection<?>) bikeShopStock1, Remmen);
