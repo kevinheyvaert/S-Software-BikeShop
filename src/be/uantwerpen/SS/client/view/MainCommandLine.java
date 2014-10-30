@@ -1,9 +1,12 @@
 package be.uantwerpen.SS.client.view;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 import be.uantwerpen.SS.client.model.Basisonderdelen;
 import be.uantwerpen.SS.client.model.Kader;
+import be.uantwerpen.SS.client.model.Product;
 import be.uantwerpen.SS.client.model.Remmen;
 import be.uantwerpen.SS.client.model.Stock;
 import be.uantwerpen.SS.client.model.Wiel;
@@ -83,6 +86,12 @@ public class MainCommandLine {
     {
     	bikeShopStock1.getStockFromXml();
     	System.out.println("Data geload");
+    	//int aantalKaders = Collections.frequency( bikeShopStock1, Kader);
+    	//int aantalWielen = Collections.frequency((Collection<?>) bikeShopStock1, Wiel);
+    	//int aantalBasisonderdelen = Collections.frequency((Collection<?>) bikeShopStock1, Basisonderdelen);
+    	//int aantalRemmen = Collections.frequency((Collection<?>) bikeShopStock1, Remmen);
+    	System.out.println("Stockoverview : \n Aantal kaders : "+aantalKaders+ "\n Aantal Wielen : " + aantalWielen + "\n Aantal Remmen : " + aantalRemmen + "\n Aantal Basisonderedelen : " + aantalBasisonderdelen);
+    	
     }
     
     public void addProduct()
