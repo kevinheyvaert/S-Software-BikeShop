@@ -1,5 +1,10 @@
-package be.uantwerpen.SS.client.model;
+package be.uantwerpen.SS.client.model.stock;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+import be.uantwerpen.SS.client.model.stock.Product;
+
+@XmlRootElement
 public class Wiel extends Product {
 	private String type;
 	private String maat;
@@ -8,6 +13,9 @@ public class Wiel extends Product {
 		super(iD, naam);
 		type = "standaardwiel";
 		maat = "universeel";
+	}
+	
+	public Wiel() {
 	}
 
 	/**

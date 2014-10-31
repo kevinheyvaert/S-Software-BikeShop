@@ -6,7 +6,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import be.uantwerpen.SS.client.model.Stock;
+import be.uantwerpen.SS.client.model.stock.Stock;
 
 import java.io.*;
 
@@ -16,7 +16,7 @@ public class StockMarshaller {
     public void marshalStockToXML(Stock stock) {
         StringWriter writer = new StringWriter();
         try {
-            context = JAXBContext.newInstance(Stock.class);
+            context = JAXBContext.newInstance("be.uantwerpen.SS.client.model.stock");
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(stock, writer);

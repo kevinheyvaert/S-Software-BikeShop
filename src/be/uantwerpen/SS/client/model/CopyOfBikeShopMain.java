@@ -2,13 +2,8 @@ package be.uantwerpen.SS.client.model;
 
 import java.rmi.RemoteException;
 
-import be.uantwerpen.SS.client.model.stock.Kader;
-import be.uantwerpen.SS.client.model.stock.Stock;
 
-//import be.uantwerpen.SS.client.view.MainCommandLine;
-
-
-public class BikeShopMain {
+public class CopyOfBikeShopMain {
 	public static void main(String[] args) {
 		Stock bikeShopStock1 = new Stock();
 		System.out.println("BikeShop gestart");
@@ -19,7 +14,5 @@ public class BikeShopMain {
 		
 		System.out.println("Product " +(numberOfProductsInStock+1) + " toegevoegd");
 		bikeShopStock1.saveStockToXml();
-		
-		
     }
 }

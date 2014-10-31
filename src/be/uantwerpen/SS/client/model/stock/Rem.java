@@ -1,11 +1,17 @@
-package be.uantwerpen.SS.client.model;
+package be.uantwerpen.SS.client.model.stock;
 
-public class Remmen extends Product {
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Rem extends Product {
 	private String type;
 	
-	public Remmen(String iD, String naam) {
+	public Rem(String iD, String naam) {
 		super(iD, naam);
 		type = "blokjes remmen";
+	}
+	
+	public Rem() {
 	}
 
 	/**

@@ -1,10 +1,11 @@
-package be.uantwerpen.SS.client.model;
+package be.uantwerpen.SS.client.model.stock;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
-@XmlRootElement(name = "product")
-public class Product {
+@XmlTransient
+public abstract class Product {
 	@XmlElement(name="iD")
 	private String iD;
 	

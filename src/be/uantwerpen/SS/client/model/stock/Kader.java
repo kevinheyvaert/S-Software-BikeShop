@@ -1,19 +1,23 @@
-package be.uantwerpen.SS.client.model;
+package be.uantwerpen.SS.client.model.stock;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "kader")
+@XmlRootElement
 public class Kader extends Product {
-	@XmlElement(name="graverenDefaultWaarde")
+
 	private boolean graverenDefaultWaarde;
-	@XmlElement(name="kleur")
+
 	private String kleur;
 
 	public Kader(String iD, String naam) {
 		super(iD, naam);
 		graverenDefaultWaarde = false;
 		kleur = "wit";
+	}
+	
+	public Kader() {
+		
 	}
 
 	/**
