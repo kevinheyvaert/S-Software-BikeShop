@@ -1,5 +1,10 @@
-package be.uantwerpen.SS.client.model;
+package be.uantwerpen.SS.client.model.stock;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import be.uantwerpen.SS.client.model.stock.Product;
+
+
+@XmlRootElement
 public class Basisonderdelen extends Product {
 	private String type;
 	
@@ -7,6 +12,10 @@ public class Basisonderdelen extends Product {
 		super(iD, naam);
 		type = "basisset 1";
 	}
+	
+	public Basisonderdelen() {
+	}
+
 
 	/**
 	 * @return het type opvragen
