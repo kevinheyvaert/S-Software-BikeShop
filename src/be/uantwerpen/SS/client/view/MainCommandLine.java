@@ -1,16 +1,17 @@
 package be.uantwerpen.SS.client.view;
+import be.uantwerpen.SS.client.model.stock.*;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
-import be.uantwerpen.SS.client.model.Basisonderdelen;
-import be.uantwerpen.SS.client.model.Kader;
-import be.uantwerpen.SS.client.model.Product;
-import be.uantwerpen.SS.client.model.Remmen;
-import be.uantwerpen.SS.client.model.Stock;
-import be.uantwerpen.SS.client.model.Wiel;
+import be.uantwerpen.SS.client.model.stock.Basisonderdelen;
+import be.uantwerpen.SS.client.model.stock.Kader;
+import be.uantwerpen.SS.client.model.stock.Product;
+import be.uantwerpen.SS.client.model.stock.Rem;
+import be.uantwerpen.SS.client.model.stock.Stock;
+import be.uantwerpen.SS.client.model.stock.Wiel;
 
 public class MainCommandLine {
 	
@@ -87,14 +88,15 @@ public class MainCommandLine {
     {
     	bikeShopStock1.getStockFromXml();
     	
+    	/*
     	for(int i=0;i<bikeShopStock1.getProductList().size();i++){
     	    System.out.println(bikeShopStock1.getProductList().get(i));
     	} 
-    	
+    	*/
     	//System.out.println(Arrays.toString(bikeShopStock1.getProductList().toArray()));
     	System.out.println("Data geload");
-    	int aantalKaders = Collections.frequency(bikeShopStock1.getProductList(), "Kader");
-    	//int aantalWielen = Collections.frequency((Collection<?>) bikeShopStock1, Wiel);
+    	//int aantalKaders = Collections.frequency(bikeShopStock1.getProductList(), Product.naam =="kader");
+    	//int aantalWielen = Collections.frequency((Collection<?>) bikeShopStock1, "Wiel);
     	//int aantalBasisonderdelen = Collections.frequency((Collection<?>) bikeShopStock1, Basisonderdelen);
     	//int aantalRemmen = Collections.frequency((Collection<?>) bikeShopStock1, Remmen);
     	System.out.println("Stockoverview : \n Aantal kaders : "+aantalKaders+ "\n Aantal Wielen : " + aantalWielen + "\n Aantal Remmen : " + aantalRemmen + "\n Aantal Basisonderedelen : " + aantalBasisonderdelen);
@@ -143,7 +145,7 @@ public class MainCommandLine {
     		for(int i=0; i < amount; i++)
     		{
     		numberOfProductsInStock = numberOfProductsInStock + 1;	
-    		Remmen nieuweRemmen = new Remmen(""+(numberOfProductsInStock+1), "remmen");
+    		Rem nieuweRemmen = new Rem(""+(numberOfProductsInStock+1), "remmen");
     		bikeShopStock1.addProduct(nieuweRemmen);
     		
     		

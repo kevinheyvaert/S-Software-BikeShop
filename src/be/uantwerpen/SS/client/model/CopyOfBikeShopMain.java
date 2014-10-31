@@ -2,6 +2,9 @@ package be.uantwerpen.SS.client.model;
 
 import java.rmi.RemoteException;
 
+import be.uantwerpen.SS.client.model.stock.Kader;
+import be.uantwerpen.SS.client.model.stock.Stock;
+
 
 public class CopyOfBikeShopMain {
 	public static void main(String[] args) {
