@@ -21,7 +21,7 @@ public class MainCommandLine {
 	Stock bikeShopStock1 = new Stock(); //TODO : From BikeshopMain --> beter implementeren 
 	public int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock(); //TODO : From BikeshopMain --> beter implementeren
 	
-	public int aantalKaders, aantalRemmen, aantalBasisonderdelen, aantalWielen;
+	public int aantalKaders, aantalRemmen, aantalBasisonderdelen, aantalWielen = 0;
 	
 	private static final String lines = "\n-----------------------------------\n";
 
@@ -88,11 +88,28 @@ public class MainCommandLine {
     {
     	bikeShopStock1.getStockFromXml();
     	
-    	/*
+    	
     	for(int i=0;i<bikeShopStock1.getProductList().size();i++){
-    	    System.out.println(bikeShopStock1.getProductList().get(i));
+    	    
+    		 System.out.println(bikeShopStock1.getProductList().get(i) instanceof Product);
+    		
+    		if (bikeShopStock1.getProductList().get(i) instanceof Kader)
+    			aantalKaders = aantalKaders + 1;
+    		
+    		
+    		if (bikeShopStock1.getProductList().get(i) instanceof Wiel)
+    			aantalWielen = aantalWielen + 1;
+    		
+    		if (bikeShopStock1.getProductList().get(i) instanceof Basisonderdelen)
+    			aantalBasisonderdelen = aantalBasisonderdelen + 1;
+    		
+    		if (bikeShopStock1.getProductList().get(i) instanceof Rem)
+    			aantalRemmen = aantalRemmen + 1;
+    		
+    		//System.out.println(bikeShopStock1.getProductList().get(i).hashCode());
     	} 
-    	*/
+    	
+    	
     	//System.out.println(Arrays.toString(bikeShopStock1.getProductList().toArray()));
     	System.out.println("Data geload");
     	//int aantalKaders = Collections.frequency(bikeShopStock1.getProductList(), Product.naam =="kader");
