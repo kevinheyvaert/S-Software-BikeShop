@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-@XmlTransient
+//@XmlTransient
 public abstract class Product {
 	@XmlElement(name="iD")
 	private String iD;

@@ -27,7 +27,7 @@ public class Stock implements Serializable {
 		productList.add(product);
 	}
 	
-	@XmlElement
+	@XmlElementRef
 	public List<Product> getProductList() {
 		return productList;
 	}

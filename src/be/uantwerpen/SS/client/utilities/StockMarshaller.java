@@ -43,7 +43,7 @@ public class StockMarshaller {
         Stock stock = null;
         File file = new File("stock.xml");
         try {
-            context = JAXBContext.newInstance(Stock.class);
+            context = JAXBContext.newInstance("be.uantwerpen.SS.client.model.stock");
             Unmarshaller unmarshaller = context.createUnmarshaller();
             stock = (Stock) unmarshaller.unmarshal(file);
             return stock;

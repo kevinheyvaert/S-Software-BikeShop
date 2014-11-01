@@ -86,8 +86,10 @@ public class MainCommandLine {
     
     public void load()
     {
-    	bikeShopStock1.getStockFromXml();
     	
+    	System.out.println("Aantal producten voor Load: " + bikeShopStock1.getProductList().size() );
+    	bikeShopStock1.getStockFromXml();
+    	System.out.println("Aantal producten na Load: " + bikeShopStock1.getProductList().size() );
     	
     	for(int i=0;i<bikeShopStock1.getProductList().size();i++){
     	    
