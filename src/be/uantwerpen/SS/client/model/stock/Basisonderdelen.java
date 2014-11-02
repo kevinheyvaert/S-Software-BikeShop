@@ -10,7 +10,7 @@ public class Basisonderdelen extends Product {
 	
 	public Basisonderdelen(String iD, String naam) {
 		super(iD, naam);
-		type = "basisset 1";
+		type = "Type 1";
 	}
 	
 	public Basisonderdelen() {
@@ -20,6 +20,7 @@ public class Basisonderdelen extends Product {
 	/**
 	 * @return het type opvragen
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}

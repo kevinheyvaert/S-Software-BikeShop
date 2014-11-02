@@ -11,7 +11,7 @@ public class Wiel extends Product {
 	
 	public Wiel(String iD, String naam) {
 		super(iD, naam);
-		type = "standaardwiel";
+		type = "Standaard";
 		maat = "universeel";
 	}
 	
@@ -21,6 +21,7 @@ public class Wiel extends Product {
 	/**
 	 * @return het type opvragen
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -35,6 +36,7 @@ public class Wiel extends Product {
 	/**
 	 * @return de maat opvragen
 	 */
+	@Override
 	public String getMaat() {
 		return maat;
 	}

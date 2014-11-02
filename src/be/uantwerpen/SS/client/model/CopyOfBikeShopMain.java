@@ -16,6 +16,8 @@ public class CopyOfBikeShopMain {
 		bikeShopStock1.addProduct(nieuwekader);
 		
 		System.out.println("Product " +(numberOfProductsInStock+1) + " toegevoegd");
-		bikeShopStock1.saveStockToXml();
+		//bikeShopStock1.saveStockToXml();
+		
+		System.out.println(nieuwekader.getKleur());
     }
 }

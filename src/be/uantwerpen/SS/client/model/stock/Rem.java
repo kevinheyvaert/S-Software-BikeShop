@@ -8,7 +8,7 @@ public class Rem extends Product {
 	
 	public Rem(String iD, String naam) {
 		super(iD, naam);
-		type = "blokjes remmen";
+		type = "V-Brakes";
 	}
 	
 	public Rem() {
@@ -17,6 +17,7 @@ public class Rem extends Product {
 	/**
 	 * @return het type opvragen
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}

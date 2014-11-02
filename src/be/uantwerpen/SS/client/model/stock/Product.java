@@ -67,6 +67,24 @@ public abstract class Product {
 		
 	}
 	
+	public String getKleur()
+	{
+		return null;
+
+	}
+	
+	public String getType()
+	{
+		return null;
+
+	}
+	
+	public String getMaat()
+	{
+		return null;
+	}
+	
+	
 	public void Bekijken(){
 	}
 	public void Bewerken(){

@@ -37,6 +37,7 @@ public class Kader extends Product {
 	/**
 	 * @return de kleur opvragen
 	 */
+	@Override
 	public String getKleur() {
 		return kleur;
 	}
