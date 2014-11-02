@@ -36,6 +36,37 @@ public abstract class Product {
 	}
 	
 	//volgens mij zijn dit geen methode die deel uitmaken van de klasse product horen eerder apparte classes te zijn in controller
+	
+	public String getiD()
+	{
+		return iD;
+		
+	}
+	
+	public String getNaam()
+	{
+		return naam;
+		
+	}
+	
+	public String getOmschrijving()
+	{
+		return omschrijving;
+		
+	}
+	
+	public String getInkoopPrijs()
+	{
+		return inkoopPrijs;
+		
+	}
+	
+	public String getVerkoopPrijs()
+	{
+		return verkoopPrijs;
+		
+	}
+	
 	public void Bekijken(){
 	}
 	public void Bewerken(){

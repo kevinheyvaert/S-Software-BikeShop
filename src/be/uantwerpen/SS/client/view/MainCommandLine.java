@@ -49,8 +49,9 @@ public class MainCommandLine {
 			System.out.printf("\n\nMain menu%s\n"
 					+ "1. Load stock into program\n"
 					+ "2. Zet nieuw product in de stock\n" 
-					+ "3. Save stock to file:\n"
-					+ "4. Stop this client\n", lines);
+					+ "3. Zie stock per type onderdeel\n"
+					+ "4. Save stock to file:\n"
+					+ "5. Stop this client\n", lines);
 			Integer mm = tryParseInteger(askInput());
 			if (mm != null) {
 				switch (mm) {
@@ -61,9 +62,12 @@ public class MainCommandLine {
 					addProduct();
 					break;
 				case 3:
-					save();
+					showSpecs();
 					break;
 				case 4:
+					save();
+					break;
+				case 5:
 					System.exit(0);
 					break;
 				default:
@@ -124,7 +128,7 @@ public class MainCommandLine {
     
     public void addProduct()
     {
-    	int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock();
+    	//int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock();
     	
     	System.out.printf("Product what do you want to restock :");
 		String typeProduct = askInput();
@@ -194,5 +198,57 @@ public class MainCommandLine {
     	bikeShopStock1.saveStockToXml();
     	System.out.println("Data gesaved");
     }
+    
+    public void showSpecs()
+    {
+    	System.out.printf("Product what do you want to see :");
+		String typeProduct = askInput();
 
+		System.out.printf("ID \t" + "Naam \t" + "Omschrijving \t" +"Inkoopprijs \t" + "Verkoopprijs \n");
+
+    	if (typeProduct .equals("Kader"))
+    	{    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
+    		{
+    			if (bikeShopStock1.getProductList().get(i) instanceof Kader)
+    			{
+    				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
+    			}
+    		}
+    	 }
+    				
+    	if (typeProduct .equals("Wiel"))
+    	{    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
+    		{
+    			if (bikeShopStock1.getProductList().get(i) instanceof Wiel)
+    			{
+    				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
+    			}
+    		}
+    	 }	
+    		
+    	if (typeProduct .equals("Rem"))
+    	{    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
+    		{
+    			if (bikeShopStock1.getProductList().get(i) instanceof Wiel)
+    			{
+    				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
+    			}
+    		}
+    	 }		
+    		
+    	if (typeProduct .equals("Basisonderdelen"))
+    	{    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
+    		{
+    			if (bikeShopStock1.getProductList().get(i) instanceof Wiel)
+    			{
+    				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
+    			}
+    		}
+    	 }		   		
+    	
+    }
 }
