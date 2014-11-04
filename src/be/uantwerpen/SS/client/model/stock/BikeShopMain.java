@@ -1,7 +1,5 @@
 package be.uantwerpen.SS.client.model.stock;
 
-import java.rmi.RemoteException;
-
 //import be.uantwerpen.SS.client.view.MainCommandLine;
 
 

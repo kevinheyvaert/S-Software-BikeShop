@@ -1,8 +1,5 @@
 package be.uantwerpen.SS.client.model.stock;
 
-import java.rmi.RemoteException;
-
-
 public class CopyOfBikeShopMain {
 	public static void main(String[] args) {
 		Stock bikeShopStock1 = new Stock();

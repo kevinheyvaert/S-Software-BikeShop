@@ -4,12 +4,9 @@ import java.io.Serializable;
 
 import be.uantwerpen.SS.client.utilities.StockMarshaller;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

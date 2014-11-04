@@ -1,14 +1,9 @@
 package be.uantwerpen.SS.client.view;
-import be.uantwerpen.SS.client.model.stock.*;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
 
 import be.uantwerpen.SS.client.model.stock.Basisonderdelen;
 import be.uantwerpen.SS.client.model.stock.Kader;
-import be.uantwerpen.SS.client.model.stock.Product;
 import be.uantwerpen.SS.client.model.stock.Rem;
 import be.uantwerpen.SS.client.model.stock.Stock;
 import be.uantwerpen.SS.client.model.stock.Wiel;
@@ -121,67 +116,48 @@ public class MainCommandLine {
     
     public void addProduct()
     {
-    	System.out.printf("Product what do you want to restock :");
+    	System.out.println("Product what do you want to restock: ");
 		String typeProduct = askInput();
-		System.out.printf("Amount: ");
+		System.out.println("Amount: ");
 		String stringAmount = askInput();
 		
 		int amount = Integer.parseInt(stringAmount);
 		
-    	if (typeProduct .equals("Kader"))
-    	{
-    		for(int i=0; i < amount; i++)
-    		{
-    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader");
-    		bikeShopStock1.addProduct(nieuwekader);
-    		
-    		
+    	if (typeProduct .equals("Kader")){
+    		for(int i=0; i < amount; i++){
+	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+	    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader");
+	    		bikeShopStock1.addProduct(nieuwekader);
     		}
     		aantalKaders = aantalKaders + amount;
     	}
     	
-    	if (typeProduct .equals("Wiel"))
-    	{
-    		for(int i=0; i < amount; i++)
-    		{
-    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-    		Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel");
-    		bikeShopStock1.addProduct(nieuwWiel);
-    		
-    		
+    	if (typeProduct .equals("Wiel")){
+    		for(int i=0; i < amount; i++){
+	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+	    		Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel");
+	    		bikeShopStock1.addProduct(nieuwWiel);
     		}
     		aantalWielen = aantalWielen + amount;
     	}
     	
-    	if (typeProduct .equals("Remmen"))
-    	{
-    		for(int i=0; i < amount; i++)
-    		{
-    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-    		Rem nieuweRemmen = new Rem(""+(numberOfProductsInStock+1), "remmen");
-    		bikeShopStock1.addProduct(nieuweRemmen);
-    		
-    		
+    	if (typeProduct .equals("Remmen")){
+    		for(int i=0; i < amount; i++){
+	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+	    		Rem nieuweRemmen = new Rem(""+(numberOfProductsInStock+1), "remmen");
+	    		bikeShopStock1.addProduct(nieuweRemmen);
     		}
     		aantalRemmen = aantalRemmen + amount;
     	}
     	
-    	if (typeProduct .equals("Basisonderdelen"))
-    	{
-    		for(int i=0; i < amount; i++)
-    		{
-    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+(numberOfProductsInStock+1), "basisonderdelen");
-    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
-    		
-    		
+    	if (typeProduct .equals("Basisonderdelen")){
+    		for(int i=0; i < amount; i++){
+	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+	    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+(numberOfProductsInStock+1), "basisonderdelen");
+	    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
     		}
     		aantalBasisonderdelen = aantalBasisonderdelen + amount;
     	}
-    	
-    	System.out.println("Product <" + typeProduct +"> toegevoegd met hoeveelheid "+(amount) + ". Totaal aantal producten in stock zijn : "+numberOfProductsInStock);
-    	System.out.println("Stockoverview : \n Aantal kaders : "+aantalKaders+ "\n Aantal Wielen : " + aantalWielen + "\n Aantal Remmen : " + aantalRemmen + "\n Aantal Basisonderdelen : " + aantalBasisonderdelen);
     }
     
     public void save()
@@ -195,51 +171,36 @@ public class MainCommandLine {
     	System.out.printf("Product what do you want to see :");
 		String typeProduct = askInput();
 
-		System.out.printf("ID \t" + "Naam \t\t" + "Omschrijving \t" + "Type \t\t"+ "Maat \t\t" + "Kleur \t"+"Inkoopprijs \t" + "Verkoopprijs \n");
-
-    	if (typeProduct .equals("Kader"))
-    	{    		
-    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
-    		{
-    			if (bikeShopStock1.getProductList().get(i) instanceof Kader)
-    			{
+    	if (typeProduct .equals("Kader")){    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
+    			if (bikeShopStock1.getProductList().get(i) instanceof Kader){
     				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
     			}
     		}
     	 }
     				
-    	if (typeProduct .equals("Wiel"))
-    	{    		
-    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
-    		{
-    			if (bikeShopStock1.getProductList().get(i) instanceof Wiel)
-    			{
+    	if (typeProduct .equals("Wiel")){    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
+    			if (bikeShopStock1.getProductList().get(i) instanceof Wiel){
     				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
     			}
     		}
     	 }	
     		
-    	if (typeProduct .equals("Remmen"))
-    	{    		
-    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
-    		{
-    			if (bikeShopStock1.getProductList().get(i) instanceof Rem)
-    			{
+    	if (typeProduct .equals("Remmen")){    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
+    			if (bikeShopStock1.getProductList().get(i) instanceof Rem){
     				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
     			}
     		}
     	 }		
     		
-    	if (typeProduct .equals("Basisonderdelen"))
-    	{    		
-    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++)
-    		{
-    			if (bikeShopStock1.getProductList().get(i) instanceof Basisonderdelen)
-    			{
+    	if (typeProduct .equals("Basisonderdelen")){    		
+    		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
+    			if (bikeShopStock1.getProductList().get(i) instanceof Basisonderdelen){
     				System.out.printf(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
     			}
     		}
     	 }		   		
-    	
     }
 }

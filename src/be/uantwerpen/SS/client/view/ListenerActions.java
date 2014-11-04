@@ -8,8 +8,16 @@ class ListenerActions implements ActionListener {
 		if(event.getActionCommand().equals("exitProgram")){
 			System.exit(0);
 		}
+		else if(event.getActionCommand().equals("plus")){
+			Main.incProduct();
+		}
+		else if(event.getActionCommand().equals("min")){
+			Main.decProduct();
+		}
 		else if(event.getActionCommand().equals("addProduct")){
 			System.out.println("product add");
+			Main.addProduct();
+			Main.load_program();
 		}
 		else if(event.getActionCommand().equals("removeProduct")){
 			System.out.println("product remove");
