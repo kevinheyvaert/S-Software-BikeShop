@@ -20,11 +20,11 @@ public abstract class Product {
 	private String verkoopPrijs;
 	
 	/* Constructor */
-	public Product(String iD, String naam) {
+	public Product(String iD, String naam, String omschrijving) {
 		this.iD = iD;
 		this.naam = naam;
+		this.omschrijving= omschrijving;
 		
-		omschrijving="changeMe";
 		inkoopPrijs="changeMe";
 		verkoopPrijs="changeMe";
 	}

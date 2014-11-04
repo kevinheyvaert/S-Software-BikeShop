@@ -11,15 +11,15 @@ public class BikeShopMain {
 		int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock();
 		
 		if (numberOfProductsInStock%3==0){
-			Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader_test"+(numberOfProductsInStock+1));
+			Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader_test"+(numberOfProductsInStock+1), "");
 			bikeShopStock1.addProduct(nieuwekader);
 		}
 		if (numberOfProductsInStock%3==1){
-			Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel_test"+(numberOfProductsInStock+1));
+			Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel_test"+(numberOfProductsInStock+1), "");
 			bikeShopStock1.addProduct(nieuwWiel);
 		}
 		if (numberOfProductsInStock%3==2){
-			Rem nieuweRem = new Rem(""+(numberOfProductsInStock+1), "rem_test"+(numberOfProductsInStock+1));
+			Rem nieuweRem = new Rem(""+(numberOfProductsInStock+1), "rem_test"+(numberOfProductsInStock+1), "");
 			bikeShopStock1.addProduct(nieuweRem);
 		}
 		

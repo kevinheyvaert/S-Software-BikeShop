@@ -126,7 +126,7 @@ public class MainCommandLine {
     	if (typeProduct .equals("Kader")){
     		for(int i=0; i < amount; i++){
 	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader");
+	    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader","");
 	    		bikeShopStock1.addProduct(nieuwekader);
     		}
     		aantalKaders = aantalKaders + amount;
@@ -135,7 +135,7 @@ public class MainCommandLine {
     	if (typeProduct .equals("Wiel")){
     		for(int i=0; i < amount; i++){
 	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel");
+	    		Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel","");
 	    		bikeShopStock1.addProduct(nieuwWiel);
     		}
     		aantalWielen = aantalWielen + amount;
@@ -144,7 +144,7 @@ public class MainCommandLine {
     	if (typeProduct .equals("Remmen")){
     		for(int i=0; i < amount; i++){
 	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Rem nieuweRemmen = new Rem(""+(numberOfProductsInStock+1), "remmen");
+	    		Rem nieuweRemmen = new Rem(""+(numberOfProductsInStock+1), "remmen","");
 	    		bikeShopStock1.addProduct(nieuweRemmen);
     		}
     		aantalRemmen = aantalRemmen + amount;
@@ -153,7 +153,7 @@ public class MainCommandLine {
     	if (typeProduct .equals("Basisonderdelen")){
     		for(int i=0; i < amount; i++){
 	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+(numberOfProductsInStock+1), "basisonderdelen");
+	    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+(numberOfProductsInStock+1), "basisonderdelen","");
 	    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
     		}
     		aantalBasisonderdelen = aantalBasisonderdelen + amount;

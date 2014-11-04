@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Rem extends Product {
 	private String type;
 	
-	public Rem(String iD, String naam) {
-		super(iD, naam);
+	public Rem(String iD, String naam, String omschrijving) {
+		super(iD, naam, omschrijving);
 		type = "V-Brakes";
 	}
 	

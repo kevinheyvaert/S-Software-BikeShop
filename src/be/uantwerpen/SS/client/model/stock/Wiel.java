@@ -9,8 +9,8 @@ public class Wiel extends Product {
 	private String type;
 	private String maat;
 	
-	public Wiel(String iD, String naam) {
-		super(iD, naam);
+	public Wiel(String iD, String naam, String omschrijving) {
+		super(iD, naam, omschrijving);
 		type = "Standaard";
 		maat = "universeel";
 	}

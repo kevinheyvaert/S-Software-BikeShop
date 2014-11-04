@@ -31,7 +31,9 @@ class ListenerActions implements ActionListener {
 		}
 		else if(event.getActionCommand().equals("assemble")){
 			System.out.println("bikeFrame");
-			ImageTest frameBike = new ImageTest();
+			String kader = Main.getKader();
+			String wiel = Main.getWiel();
+			ImageTest frameBike = new ImageTest(kader, wiel);
 			frameBike.setVisible(true);
 		}
     }

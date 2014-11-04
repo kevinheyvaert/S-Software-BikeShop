@@ -1,6 +1,10 @@
 package be.uantwerpen.SS.client.view;
 
 import java.awt.EventQueue;
+import java.text.NumberFormat;
+
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
 
 import be.uantwerpen.SS.client.model.stock.Basisonderdelen;
 import be.uantwerpen.SS.client.model.stock.Kader;
@@ -31,8 +35,6 @@ public class Main {
 				}
 			}
 		});
-		
-	
 	}
 	
 	public static void init_program(){
@@ -62,67 +64,74 @@ public class Main {
 		frame.modelWielen.clear();
 		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
     		if (bikeShopStock1.getProductList().get(i) instanceof Kader) {
-    			frame.list_kader(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
+    			frame.list_kader(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +" \t\t" +"\n");
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Wiel) {
-    			frame.list_wielen(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
+    			frame.list_wielen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Rem) {
-				frame.list_remmen(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
-			}
+				frame.list_remmen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+    		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Basisonderdelen) {
-				frame.list_basis(bikeShopStock1.getProductList().get(i).getiD() + "\t" + bikeShopStock1.getProductList().get(i).getNaam() +"\t\t" + bikeShopStock1.getProductList().get(i).getOmschrijving() + "\t" + bikeShopStock1.getProductList().get(i).getType() +"\t\t"+ bikeShopStock1.getProductList().get(i).getMaat() + "\t\t" + bikeShopStock1.getProductList().get(i).getKleur() +"\t" + bikeShopStock1.getProductList().get(i).getInkoopPrijs() + "\t" + bikeShopStock1.getProductList().get(i).getVerkoopPrijs()+"\n");
-			}
+				frame.list_basis(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+    		}
 		}
 	}
 	
 	public static void addProduct()
-    {
+    {		
 		Object typeProduct = frame.comboProduct();
-		System.out.printf("Amount: ");
-		String stringAmount = frame.get_textValue();
+		String strAmount = frame.get_textValue();
+		String strPrice= frame.get_textValueProduct();
+		String strOmschrijving = frame.get_textDescription();
+		String strID = frame.get_textID();
 		
-		int amount = Integer.parseInt(stringAmount);
-		
-    	if (typeProduct .equals("Kader")){
-    		for(int i=0; i < amount; i++){
-	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Kader nieuwekader = new Kader(""+(numberOfProductsInStock+1), "kader");
-	    		bikeShopStock1.addProduct(nieuwekader);
-    		}
-    		declaratie.aantalKaders += amount;
-    	}
-    	
-    	if (typeProduct .equals("Wielen")){
-    		for(int i=0; i < amount; i++){
-	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Wiel nieuwWiel = new Wiel(""+(numberOfProductsInStock+1), "wiel");
-	    		bikeShopStock1.addProduct(nieuwWiel);
-    		}
-    		declaratie.aantalWielen += amount;
-    	}
-    	
-    	if (typeProduct .equals("Remmen"))
-    	{
-    		for(int i=0; i < amount; i++){
-	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Rem nieuweRemmen = new Rem(""+(numberOfProductsInStock+1), "remmen");
-	    		bikeShopStock1.addProduct(nieuweRemmen);
-    		}
-    		declaratie.aantalRemmen += amount;
-    	}
-    	
-    	if (typeProduct .equals("Basis"))
-    	{
-    		for(int i=0; i < amount; i++){
-	    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-	    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+(numberOfProductsInStock+1), "basisonderdelen");
-	    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
+		if(strAmount.length()==0 || strPrice.length()==0 || strOmschrijving.length()==0 || strID.length()==0){
+			
+		}
+		else{
+			int amount = Integer.parseInt(strAmount);
+			
+	    	if (typeProduct .equals("Kader")){
+	    		for(int i=0; i < amount; i++){
+		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+		    		Kader nieuwekader = new Kader(""+strID, "kader", strOmschrijving);
+		    		bikeShopStock1.addProduct(nieuwekader);
+	    		}
+	    		declaratie.aantalKaders += amount;
 	    	}
-    		declaratie.aantalBasisonderdelen += amount;
-    	}
-    	
-    	bikeShopStock1.saveStockToXml();
+	    	
+	    	if (typeProduct .equals("Wielen")){
+	    		for(int i=0; i < amount; i++){
+		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+		    		Wiel nieuwWiel = new Wiel(""+strID, "wiel", strOmschrijving);
+		    		bikeShopStock1.addProduct(nieuwWiel);
+	    		}
+	    		declaratie.aantalWielen += amount;
+	    	}
+	    	
+	    	if (typeProduct .equals("Remmen"))
+	    	{
+	    		for(int i=0; i < amount; i++){
+		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+		    		Rem nieuweRemmen = new Rem(""+strID, "remmen", strOmschrijving);
+		    		bikeShopStock1.addProduct(nieuweRemmen);
+	    		}
+	    		declaratie.aantalRemmen += amount;
+	    	}
+	    	
+	    	if (typeProduct .equals("Basis"))
+	    	{
+	    		for(int i=0; i < amount; i++){
+		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+		    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+strID, "basisonderdelen", strOmschrijving);
+		    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
+		    	}
+	    		declaratie.aantalBasisonderdelen += amount;
+	    	}
+	    	
+	    	bikeShopStock1.saveStockToXml();
+		}
     }
 	
 	public static void incProduct() {
@@ -142,6 +151,16 @@ public class Main {
 			String put = ""+amount;
 			frame.txtValueInput.setText(put);
 		}
+	}
+
+	public static String getKader() {
+		String strReturn = frame.get_lstSelected_kader();
+		return strReturn;
+	}
+
+	public static String getWiel() {
+		String strReturn = frame.get_lstSelected_wielen();
+		return strReturn;
 	}
 
 }

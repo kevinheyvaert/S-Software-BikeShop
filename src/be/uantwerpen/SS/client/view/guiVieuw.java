@@ -224,13 +224,12 @@ public class guiVieuw extends JFrame {
 		btnMoreProduct.setBounds(115, 20, 20, 25);
 		stockPane.add(btnMoreProduct);
 		//-----------------------------------
-		lblValueProduct = new JLabel("Aantal");
+		lblValueProduct = new JLabel("Prijs");
 		lblValueProduct.setBounds(160, 20, 100, 25);
 		stockPane.add(lblValueProduct);
 		
 		txtValueProduct = new JTextField();
-		txtValueProduct.setEnabled(false);
-		txtValueProduct.setBounds(232, 20, 50, 25);
+		txtValueProduct.setBounds(235, 20, 50, 25);
 		stockPane.add(txtValueProduct);
 		
 		btnMoreStock = new JButton("+");
@@ -252,13 +251,12 @@ public class guiVieuw extends JFrame {
 		stockPane.add(txtValueInput);
 		
 		//-----------------------------------
-		lblDescription = new JLabel("Onschrijving");
+		lblDescription = new JLabel("Omschrijving");
 		lblDescription.setBounds(160, 45, 100, 25);
 		stockPane.add(lblDescription);
 		
 		txtDescription = new JTextField();
-		txtDescription.setEnabled(false);
-		txtDescription.setBounds(232, 45, 150, 50);
+		txtDescription.setBounds(235, 45, 150, 50);
 		
 		stockPane.add(txtDescription);
 		
@@ -271,8 +269,7 @@ public class guiVieuw extends JFrame {
 		stockPane.add(lblType);
 		
 		txtType = new JTextField();
-		txtType.setEnabled(false);
-		txtType.setBounds(232, 100, 150, 25);
+		txtType.setBounds(235, 100, 150, 25);
 		stockPane.add(txtType);
 		
 		btnEditType = new JButton("bewerk");
@@ -284,8 +281,7 @@ public class guiVieuw extends JFrame {
 		stockPane.add(lblID);
 		
 		txtID = new JTextField();
-		txtID.setEnabled(false);
-		txtID.setBounds(232, 125, 150, 25);
+		txtID.setBounds(235, 125, 150, 25);
 		stockPane.add(txtID);
 		
 		btnEditID = new JButton("bewerk");
@@ -444,5 +440,40 @@ public class guiVieuw extends JFrame {
 	public String get_textValue() {
 		String textFieldValue = txtValueInput.getText();
 		return textFieldValue;
+	}
+
+	public String get_textDescription() {
+		String textFieldDescription = txtDescription.getText();
+		return textFieldDescription;
+	}
+
+	public String get_textID() {
+		String textFieldID = txtID.getText();
+		return textFieldID;
+	}
+
+	public String get_textValueProduct() {
+		String textFieldValue = txtValueProduct.getText();
+		return textFieldValue;
+	}
+
+	public String get_lstSelected_kader() {
+		int index = lstKader.getSelectedIndex();
+	    if (index < 0){
+	        return "bad";
+	    }
+	    else{
+	        return "good";
+	    }
+	}
+	
+	public String get_lstSelected_wielen() {
+		int index = lstWielen.getSelectedIndex();
+	    if (index < 0){
+	        return "bad";
+	    }
+	    else{
+	        return "good";
+	    }
 	}
 }
