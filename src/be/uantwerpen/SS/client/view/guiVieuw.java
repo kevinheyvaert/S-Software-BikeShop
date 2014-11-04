@@ -365,8 +365,8 @@ public class guiVieuw extends JFrame {
 
 		btnAssemble = new JButton("Assemble");
 		btnAssemble.setBounds(121, 112, 117, 25);
-		btnMoreStock.setActionCommand("assemble");
-		btnMoreStock.addActionListener(new ListenerActions());
+		btnAssemble.setActionCommand("assemble");
+		btnAssemble.addActionListener(new ListenerActions());
 	    clientPane.add(btnAssemble);
 	    
 	    btnAssembleSave = new JButton("Save");

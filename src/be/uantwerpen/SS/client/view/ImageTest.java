@@ -5,8 +5,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
-public class ImageTest {
-	private JFrame frame = new JFrame();
+public class ImageTest extends JFrame{
     private JLayeredPane lpane = new JLayeredPane();
     
     public ImageTest()
@@ -15,9 +14,9 @@ public class ImageTest {
     	ImagePanel panelK = new ImagePanel(new ImageIcon("fiets/kaderGood.png").getImage());    
         ImagePanel panelW1 = new ImagePanel(new ImageIcon("fiets/wielBad.png").getImage());       
         
-        frame.setPreferredSize(new Dimension(600, 400));
-        frame.setLayout(new BorderLayout());
-        frame.add(lpane, BorderLayout.CENTER);
+        setPreferredSize(new Dimension(600, 400));
+        setLayout(new BorderLayout());
+        add(lpane, BorderLayout.CENTER);
         lpane.setBounds(0, 0, 600, 400);
         panelC.setBounds(0, 0, 497, 294);
         panelC.setOpaque(true);
@@ -28,8 +27,7 @@ public class ImageTest {
         lpane.add(panelC, new Integer(0), 0);
         lpane.add(panelW1, new Integer(1), 0);
         lpane.add(panelK, new Integer(3), 0);
-        frame.pack();
-        frame.setVisible(true);
+        pack();
     }
 
     /**

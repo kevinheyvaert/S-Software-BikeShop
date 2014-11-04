@@ -16,9 +16,9 @@ public class Main {
 	
 	public static void main(String args[]) {
 			
-	MainCommandLine command = new MainCommandLine();
+	//MainCommandLine command = new MainCommandLine();
 	
-	/*	//Start GUI
+		//Start GUI
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -32,7 +32,7 @@ public class Main {
 			}
 		});
 		
-	*/	
+	
 	}
 	
 	public static void init_program(){

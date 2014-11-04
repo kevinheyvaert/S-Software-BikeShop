@@ -29,5 +29,10 @@ class ListenerActions implements ActionListener {
 		else if(event.getActionCommand().equals("help")){
 			System.out.println("hulp gevraagd");
 		}
+		else if(event.getActionCommand().equals("assemble")){
+			System.out.println("bikeFrame");
+			ImageTest frameBike = new ImageTest();
+			frameBike.setVisible(true);
+		}
     }
 }
