@@ -33,7 +33,7 @@ class ListenerActions implements ActionListener {
 			System.out.println("bikeFrame");
 			String kader = Main.getKader();
 			String wiel = Main.getWiel();
-			ImageTest frameBike = new ImageTest(kader, wiel);
+			ImageTest frameBike = new ImageTest(kader, wiel, "bad", "bad");
 			frameBike.setVisible(true);
 		}
     }
