@@ -18,7 +18,7 @@ public class Main {
 	public static guiVieuw frame = new guiVieuw();
 	public static Stock bikeShopStock1 = new Stock(); //TODO : From BikeshopMain --> beter implementeren 
 	public static int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock(); //TODO : From BikeshopMain --> beter implementeren
-	
+	public static int aantalKaderId12;
 	public static void main(String args[]) {
 			
 	//MainCommandLine command = new MainCommandLine();
@@ -64,10 +64,18 @@ public class Main {
 		frame.modelRemmen.clear();
 		frame.modelWielen.clear();
 		frame.modelLichten.clear();
+		
+		
+		
 		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
-    		if (bikeShopStock1.getProductList().get(i) instanceof Kader) {
-    			frame.list_kader(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +" \t\t" +"\n");
+    		
+			if (bikeShopStock1.getProductList().get(i) instanceof Kader) {
+    			//frame.list_kader(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +" \t\t" +"\n");
+				//if (bikeShopStock1.getProductList().get(i).getiD() == "12")
+					aantalKaderId12 = aantalKaderId12 +1;  
+					
     		}
+    		
     		if (bikeShopStock1.getProductList().get(i) instanceof Wiel) {
     			frame.list_wielen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
@@ -81,6 +89,8 @@ public class Main {
 				frame.list_basis(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
 		}
+		frame.list_kader("aantal : " + aantalKaderId12 );
+		
 	}
 	
 	public static void addProduct()
