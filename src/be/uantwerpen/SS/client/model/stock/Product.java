@@ -20,13 +20,13 @@ public abstract class Product {
 	private String verkoopPrijs;
 	
 	/* Constructor */
-	public Product(String iD, String naam, String omschrijving) {
+	public Product(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
 		this.iD = iD;
 		this.naam = naam;
 		this.omschrijving= omschrijving;
 		
-		inkoopPrijs="changeMe";
-		verkoopPrijs="changeMe";
+		this.inkoopPrijs=inkoopPrijs;
+		this.verkoopPrijs=verkoopPrijs;
 	}
 	
 	/* No-arg Constructor needed for XML marshalling */

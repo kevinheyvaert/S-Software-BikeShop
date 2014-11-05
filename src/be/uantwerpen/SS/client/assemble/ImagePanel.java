@@ -1,4 +1,4 @@
-package be.uantwerpen.SS.client.view;
+package be.uantwerpen.SS.client.assemble;
 
 import java.awt.Dimension;
 import java.awt.Graphics;

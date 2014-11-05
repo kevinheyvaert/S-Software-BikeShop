@@ -1,11 +1,16 @@
-package be.uantwerpen.SS.client.view;
+package be.uantwerpen.SS.client.assemble;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
+import javax.swing.JTextPane;
+import javax.swing.JTable;
 
-public class ImageTest extends JFrame{
+public class assembleGUI extends JFrame{
+	public static final long serialVersionUID = 1L; 
+	
     private JLayeredPane lpane = new JLayeredPane();
     private ImagePanel panelC;
     private ImagePanel panelK;
@@ -13,14 +18,15 @@ public class ImageTest extends JFrame{
     private ImagePanel panelW2;
     private ImagePanel panelL;
     private ImagePanel panelZ;
+    private ImagePanel panelR;
     
-    public ImageTest(String kader, String wiel, String licht, String zadel)
+    public assembleGUI(String kader, String wiel, String rem, String licht, String zadel)
     {
     	panelC = new ImagePanel(new ImageIcon("fiets/volledig.png").getImage());
     	
         setPreferredSize(new Dimension(600, 400));
-        setLayout(new BorderLayout());
-        add(lpane, BorderLayout.CENTER);
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(lpane, BorderLayout.CENTER);
         lpane.setBounds(0, 0, 600, 400);
         panelC.setBounds(0, 0, 497, 294);
         panelC.setOpaque(true);
@@ -28,13 +34,14 @@ public class ImageTest extends JFrame{
         
         put_weel(wiel);
         put_base(kader);
+        put_rem(rem);
         put_licht(licht);
         put_zadel(zadel);
         
         pack();
     }
-    
-    public void put_weel(String format) {
+
+    private void put_weel(String format) {
     	if(format == "good"){
 	    	panelW1 = new ImagePanel(new ImageIcon("fiets/wielGood.png").getImage()); 
 	    	panelW2 = new ImagePanel(new ImageIcon("fiets/wielGood.png").getImage()); 
@@ -63,7 +70,7 @@ public class ImageTest extends JFrame{
         lpane.add(panelK, new Integer(2), 0);
     }
     
-    public void put_licht(String format) {
+    private void put_licht(String format) {
     	if(format == "good"){
     		panelL = new ImagePanel(new ImageIcon("fiets/lichtFGood.png").getImage()); 
     	}
@@ -75,7 +82,19 @@ public class ImageTest extends JFrame{
         lpane.add(panelL, new Integer(3), 0);
     }
     
-    public void put_zadel(String format) {
+    private void put_rem(String format) {
+    	if(format == "good"){
+    		panelR = new ImagePanel(new ImageIcon("fiets/remGood.png").getImage()); 
+    	}
+    	else{
+    		panelR = new ImagePanel(new ImageIcon("fiets/remBad.png").getImage()); 
+    	}
+    	panelR.setBounds(0, 0, 0, 0);
+    	panelR.setOpaque(true);
+        lpane.add(panelR, new Integer(4), 0);
+	}
+
+    private void put_zadel(String format) {
     	if(format == "good"){
     		panelZ = new ImagePanel(new ImageIcon("fiets/zadelGood.png").getImage()); 
     	}
@@ -84,6 +103,6 @@ public class ImageTest extends JFrame{
     	}
     	panelZ.setBounds(291, 0, 91, 35);
     	panelZ.setOpaque(true);
-        lpane.add(panelZ, new Integer(4), 0);
+        lpane.add(panelZ, new Integer(5), 0);
     }
 }

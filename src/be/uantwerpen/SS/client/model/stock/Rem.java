@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Rem extends Product {
 	private String type;
 	
-	public Rem(String iD, String naam, String omschrijving) {
-		super(iD, naam, omschrijving);
+	public Rem(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
+		super(iD, naam, omschrijving, inkoopPrijs, verkoopPrijs);
 		type = "V-Brakes";
 	}
 	
@@ -28,7 +28,5 @@ public class Rem extends Product {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-	
 
 }

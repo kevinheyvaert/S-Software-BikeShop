@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 
 import be.uantwerpen.SS.client.model.stock.Basisonderdelen;
 import be.uantwerpen.SS.client.model.stock.Kader;
+import be.uantwerpen.SS.client.model.stock.Licht;
 import be.uantwerpen.SS.client.model.stock.Rem;
 import be.uantwerpen.SS.client.model.stock.Stock;
 import be.uantwerpen.SS.client.model.stock.Wiel;
@@ -62,6 +63,7 @@ public class Main {
 		frame.modelKader.clear();
 		frame.modelRemmen.clear();
 		frame.modelWielen.clear();
+		frame.modelLichten.clear();
 		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
     		if (bikeShopStock1.getProductList().get(i) instanceof Kader) {
     			frame.list_kader(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +" \t\t" +"\n");
@@ -71,6 +73,9 @@ public class Main {
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Rem) {
 				frame.list_remmen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+    		}
+    		if (bikeShopStock1.getProductList().get(i) instanceof Licht) {
+				frame.list_lichten(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Basisonderdelen) {
 				frame.list_basis(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
@@ -95,7 +100,7 @@ public class Main {
 	    	if (typeProduct .equals("Kader")){
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Kader nieuwekader = new Kader(""+strID, "kader", strOmschrijving);
+		    		Kader nieuwekader = new Kader(""+strID, "kader", strOmschrijving,"","");
 		    		bikeShopStock1.addProduct(nieuwekader);
 	    		}
 	    		declaratie.aantalKaders += amount;
@@ -104,7 +109,7 @@ public class Main {
 	    	if (typeProduct .equals("Wielen")){
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Wiel nieuwWiel = new Wiel(""+strID, "wiel", strOmschrijving);
+		    		Wiel nieuwWiel = new Wiel(""+strID, "wiel", strOmschrijving,"","");
 		    		bikeShopStock1.addProduct(nieuwWiel);
 	    		}
 	    		declaratie.aantalWielen += amount;
@@ -114,17 +119,27 @@ public class Main {
 	    	{
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Rem nieuweRemmen = new Rem(""+strID, "remmen", strOmschrijving);
+		    		Rem nieuweRemmen = new Rem(""+strID, "remmen", strOmschrijving,"","");
 		    		bikeShopStock1.addProduct(nieuweRemmen);
 	    		}
 	    		declaratie.aantalRemmen += amount;
+	    	}
+	    	
+	    	if (typeProduct .equals("Lichten"))
+	    	{
+	    		for(int i=0; i < amount; i++){
+		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
+		    		Licht nieuweLichten = new Licht(""+strID, "lichten", strOmschrijving,"","");
+		    		bikeShopStock1.addProduct(nieuweLichten);
+	    		}
+	    		declaratie.aantalLichten += amount;
 	    	}
 	    	
 	    	if (typeProduct .equals("Basis"))
 	    	{
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+strID, "basisonderdelen", strOmschrijving);
+		    		Basisonderdelen nieuweBasisOnderdelen = new Basisonderdelen(""+strID, "basisonderdelen", strOmschrijving,"","");
 		    		bikeShopStock1.addProduct(nieuweBasisOnderdelen);
 		    	}
 	    		declaratie.aantalBasisonderdelen += amount;
@@ -163,4 +178,13 @@ public class Main {
 		return strReturn;
 	}
 
+	public static String getRem() {
+		String strReturn = frame.get_lstSelected_remmen();
+		return strReturn;
+	}
+
+	public static String getLicht() {
+		String strReturn = frame.get_lstSelected_lichten();
+		return strReturn;
+	}
 }

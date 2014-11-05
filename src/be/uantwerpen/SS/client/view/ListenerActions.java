@@ -3,6 +3,8 @@ package be.uantwerpen.SS.client.view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import be.uantwerpen.SS.client.assemble.assembleGUI;
+
 class ListenerActions implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("exitProgram")){
@@ -33,7 +35,10 @@ class ListenerActions implements ActionListener {
 			System.out.println("bikeFrame");
 			String kader = Main.getKader();
 			String wiel = Main.getWiel();
-			ImageTest frameBike = new ImageTest(kader, wiel, "bad", "bad");
+			String rem = Main.getRem();
+			String licht = Main.getLicht();
+			
+			assembleGUI frameBike = new assembleGUI(kader, wiel, rem, licht, "bad");
 			frameBike.setVisible(true);
 		}
     }

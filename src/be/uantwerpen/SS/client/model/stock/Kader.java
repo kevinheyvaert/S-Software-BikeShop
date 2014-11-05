@@ -9,8 +9,8 @@ public class Kader extends Product {
 
 	private String kleur;
 
-	public Kader(String iD, String naam, String omschrijving) {
-		super(iD, naam, omschrijving);
+	public Kader(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
+		super(iD, naam, omschrijving, inkoopPrijs, verkoopPrijs);
 		graverenDefaultWaarde = false;
 		kleur = "wit";
 	}

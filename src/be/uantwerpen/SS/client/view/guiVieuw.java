@@ -458,18 +458,27 @@ public class guiVieuw extends JFrame {
 	}
 
 	public String get_lstSelected_kader() {
-		int index = lstKader.getSelectedIndex();
-	    if (index < 0){
-	        return "bad";
-	    }
-	    else{
-	        return "good";
-	    }
+		String select = get_selected(lstKader.getSelectedIndex());
+		return select;
 	}
 	
 	public String get_lstSelected_wielen() {
-		int index = lstWielen.getSelectedIndex();
-	    if (index < 0){
+		String select = get_selected(lstWielen.getSelectedIndex());
+		return select;
+	}
+
+	public String get_lstSelected_remmen() {
+		String select = get_selected(lstRemmen.getSelectedIndex());
+		return select;
+	}
+
+	public String get_lstSelected_lichten() {
+		String select = get_selected(lstLichten.getSelectedIndex());
+		return select;
+	}
+	
+	public String get_selected(int index){
+		if (index < 0){
 	        return "bad";
 	    }
 	    else{

@@ -1,6 +1,5 @@
 package be.uantwerpen.SS.client.utilities;
 
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -9,7 +8,6 @@ import javax.xml.bind.Unmarshaller;
 import be.uantwerpen.SS.client.model.stock.Stock;
 
 import java.io.*;
-
 
 public class StockMarshaller {
 	JAXBContext context = null;
