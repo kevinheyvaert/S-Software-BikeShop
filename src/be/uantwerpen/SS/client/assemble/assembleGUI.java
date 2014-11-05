@@ -52,8 +52,10 @@ public class assembleGUI extends JFrame{
     	}
     	panelW1.setBounds(0, 106, 188, 187);
         panelW1.setOpaque(true);
+        panelW1.addMouseListener(new MyMouseListener("wiel"));  
         panelW2.setBounds(309, 106, 188, 187);
         panelW2.setOpaque(true);
+        panelW2.addMouseListener(new MyMouseListener("wiel"));  
         lpane.add(panelW1, new Integer(1), 0);
         lpane.add(panelW2, new Integer(1), 0);
     }
@@ -67,6 +69,7 @@ public class assembleGUI extends JFrame{
     	}
         panelK.setBounds(83, 0, 343, 259);
         panelK.setOpaque(true);
+        panelK.addMouseListener(new MyMouseListener("kader")); 
         lpane.add(panelK, new Integer(2), 0);
     }
     
@@ -79,6 +82,7 @@ public class assembleGUI extends JFrame{
     	}
         panelL.setBounds(111, 59, 25, 31);
         panelL.setOpaque(true);
+        panelL.addMouseListener(new MyMouseListener("licht")); 
         lpane.add(panelL, new Integer(3), 0);
     }
     
@@ -91,6 +95,7 @@ public class assembleGUI extends JFrame{
     	}
     	panelR.setBounds(0, 0, 0, 0);
     	panelR.setOpaque(true);
+        panelR.addMouseListener(new MyMouseListener("rem")); 
         lpane.add(panelR, new Integer(4), 0);
 	}
 
@@ -103,6 +108,7 @@ public class assembleGUI extends JFrame{
     	}
     	panelZ.setBounds(291, 0, 91, 35);
     	panelZ.setOpaque(true);
+        panelZ.addMouseListener(new MyMouseListener("zadel")); 
         lpane.add(panelZ, new Integer(5), 0);
     }
 }
