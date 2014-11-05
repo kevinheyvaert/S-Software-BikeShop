@@ -100,7 +100,7 @@ public class Main {
 	    	if (typeProduct .equals("Kader")){
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Kader nieuwekader = new Kader(""+strID, "kader", strOmschrijving,"","");
+		    		Kader nieuwekader = new Kader(""+strID, "kader", strOmschrijving,strPrice,"");
 		    		bikeShopStock1.addProduct(nieuwekader);
 	    		}
 	    		declaratie.aantalKaders += amount;
@@ -109,7 +109,7 @@ public class Main {
 	    	if (typeProduct .equals("Wielen")){
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Wiel nieuwWiel = new Wiel(""+strID, "wiel", strOmschrijving,"","");
+		    		Wiel nieuwWiel = new Wiel(""+strID, "wiel", strOmschrijving,strPrice,"");
 		    		bikeShopStock1.addProduct(nieuwWiel);
 	    		}
 	    		declaratie.aantalWielen += amount;
@@ -119,7 +119,7 @@ public class Main {
 	    	{
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Rem nieuweRemmen = new Rem(""+strID, "remmen", strOmschrijving,"","");
+		    		Rem nieuweRemmen = new Rem(""+strID, "remmen", strOmschrijving,strPrice,"");
 		    		bikeShopStock1.addProduct(nieuweRemmen);
 	    		}
 	    		declaratie.aantalRemmen += amount;
@@ -129,7 +129,7 @@ public class Main {
 	    	{
 	    		for(int i=0; i < amount; i++){
 		    		numberOfProductsInStock = numberOfProductsInStock + 1;	
-		    		Licht nieuweLichten = new Licht(""+strID, "lichten", strOmschrijving,"","");
+		    		Licht nieuweLichten = new Licht(""+strID, "lichten", strOmschrijving,strPrice,"");
 		    		bikeShopStock1.addProduct(nieuweLichten);
 	    		}
 	    		declaratie.aantalLichten += amount;
