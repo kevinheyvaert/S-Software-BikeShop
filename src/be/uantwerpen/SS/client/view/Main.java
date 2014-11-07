@@ -18,6 +18,7 @@ public class Main {
 	public static guiVieuw frame = new guiVieuw();
 	public static Stock bikeShopStock1 = new Stock(); //TODO : From BikeshopMain --> beter implementeren 
 	public static int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock(); //TODO : From BikeshopMain --> beter implementeren
+	public static int aantalFietsen;
 	public static void main(String args[]) {
 			
 	//MainCommandLine command = new MainCommandLine();
@@ -190,7 +191,10 @@ public class Main {
 	//FIXME is een test methode
 	public static void MakeBike()
 	{
-		frame.list_log_client("fiets gemaakt");
+		aantalFietsen = aantalFietsen +1;
+		
+		//FIXME \t werkt precies niet in frames
+		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen);
 		
 		declaratie.aantalKaders = declaratie.aantalKaders - 1;
 		declaratie.aantalWielen = declaratie.aantalWielen - 1;
