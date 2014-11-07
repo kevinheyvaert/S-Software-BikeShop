@@ -18,7 +18,6 @@ public class Main {
 	public static guiVieuw frame = new guiVieuw();
 	public static Stock bikeShopStock1 = new Stock(); //TODO : From BikeshopMain --> beter implementeren 
 	public static int numberOfProductsInStock=bikeShopStock1.getTotalNumberOfProductsInStock(); //TODO : From BikeshopMain --> beter implementeren
-	public static int aantalKaderId12;
 	public static void main(String args[]) {
 			
 	//MainCommandLine command = new MainCommandLine();
@@ -54,6 +53,9 @@ public class Main {
 			
 			if (bikeShopStock1.getProductList().get(i) instanceof Rem)
 				declaratie.aantalRemmen +=1;
+			
+			if (bikeShopStock1.getProductList().get(i) instanceof Licht)
+				declaratie.aantalLichten +=1;
 		} 
 	}
 	
@@ -65,36 +67,43 @@ public class Main {
 		frame.modelWielen.clear();
 		frame.modelLichten.clear();
 		
-		
+		//TODO MOET NOG HELEMAAL AANGEPAST WORDEN
 		
 		for(int i=0; i < bikeShopStock1.getProductList().size(); i++){
     		
 			if (bikeShopStock1.getProductList().get(i) instanceof Kader) {
     			//frame.list_kader(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +" \t\t" +"\n");
 				//if (bikeShopStock1.getProductList().get(i).getiD() == "12")
-					aantalKaderId12 = aantalKaderId12 +1;  
+					//aantalKaderId12 = aantalKaderId12 +1;  
 					
     		}
     		
     		if (bikeShopStock1.getProductList().get(i) instanceof Wiel) {
-    			frame.list_wielen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+    			//frame.list_wielen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Rem) {
-				frame.list_remmen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+				//frame.list_remmen(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Licht) {
-				frame.list_lichten(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+				//frame.list_lichten(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
     		if (bikeShopStock1.getProductList().get(i) instanceof Basisonderdelen) {
-				frame.list_basis(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
+				//frame.list_basis(bikeShopStock1.getProductList().get(i).getiD() + " : \t " + bikeShopStock1.getProductList().get(i).getOmschrijving() +"\t\t" +"\n");
     		}
 		}
-		frame.list_kader("aantal : " + aantalKaderId12 );
+			frame.list_kader( "Basic Kader : "+ declaratie.aantalKaders );
+			frame.list_wielen( "Basic wiel : "+ declaratie.aantalWielen );
+			frame.list_remmen( "Basic remmen : "+ declaratie.aantalRemmen );
+			frame.list_lichten( "Basic lichten : "+ declaratie.aantalLichten );
+			frame.list_basis( "Basic Basisonderdelen : "+ declaratie.aantalBasisonderdelen );
+			
 		
 	}
 	
 	public static void addProduct()
     {		
+		//FIXME bij eerste klik op add word maar 1 product toegevoegd en bij 2de klik pas de eigenlijke amount
+		
 		Object typeProduct = frame.comboProduct();
 		String strAmount = frame.get_textValue();
 		String strPrice= frame.get_textValueProduct();
@@ -176,6 +185,19 @@ public class Main {
 			String put = ""+amount;
 			frame.txtValueInput.setText(put);
 		}
+	}
+	
+	//FIXME is een test methode
+	public static void MakeBike()
+	{
+		frame.list_log_client("fiets gemaakt");
+		
+		declaratie.aantalKaders = declaratie.aantalKaders - 1;
+		declaratie.aantalWielen = declaratie.aantalWielen - 1;
+		declaratie.aantalLichten = declaratie.aantalLichten - 1;
+		declaratie.aantalBasisonderdelen = declaratie.aantalBasisonderdelen -1;
+		declaratie.aantalRemmen = declaratie.aantalRemmen -1;
+
 	}
 
 	public static String getKader() {

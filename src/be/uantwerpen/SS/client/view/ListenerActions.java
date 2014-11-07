@@ -33,10 +33,13 @@ class ListenerActions implements ActionListener {
 		}
 		else if(event.getActionCommand().equals("assemble")){
 			System.out.println("bikeFrame");
+			Main.MakeBike();
 			String kader = Main.getKader();
 			String wiel = Main.getWiel();
 			String rem = Main.getRem();
 			String licht = Main.getLicht();
+			
+			
 			
 			assembleGUI frameBike = new assembleGUI(kader, wiel, rem, licht, "bad");
 			frameBike.setVisible(true);
