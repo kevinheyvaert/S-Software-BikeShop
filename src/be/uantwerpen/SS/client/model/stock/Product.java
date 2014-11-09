@@ -19,6 +19,8 @@ public abstract class Product {
 	@XmlElement(name="verkoopPrijs")
 	private String verkoopPrijs;
 	
+	private int aantal;
+	
 	/* Constructor */
 	public Product(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
 		this.iD = iD;
@@ -27,6 +29,7 @@ public abstract class Product {
 		
 		this.inkoopPrijs=inkoopPrijs;
 		this.verkoopPrijs=verkoopPrijs;
+		this.aantal=0;
 	}
 	
 	/* No-arg Constructor needed for XML marshalling */
@@ -35,6 +38,14 @@ public abstract class Product {
 	
 	//volgens mij zijn dit geen methode die deel uitmaken van de klasse product horen eerder apparte classes te zijn in controller
 	
+	public int getAantal() {
+		return aantal;
+	}
+
+	public void setAantal(int aantal) {
+		this.aantal = aantal;
+	}
+
 	public String getiD()
 	{
 		return iD;
