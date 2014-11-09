@@ -20,7 +20,12 @@ public class Main {
 	public static int aantalFietsen;
 	public static boolean debug;
 	public static void main(String[] args) {
-		debug= (args[0].equals("-d"));
+		if (args.length ==1){
+			debug = (args[0].equals("-d"));
+		}
+		else {
+			debug = false;
+		}
 			
 	//MainCommandLine command = new MainCommandLine();
 	
