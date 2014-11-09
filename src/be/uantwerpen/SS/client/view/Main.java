@@ -200,14 +200,14 @@ public class Main {
 		aantalFietsen = aantalFietsen +1;
 		
 		//FIXME \t werkt precies niet in frames
-		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen);
+		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders);
 		
 		declaratie.aantalKaders = declaratie.aantalKaders - 1;
 		declaratie.aantalWielen = declaratie.aantalWielen - 1;
 		declaratie.aantalLichten = declaratie.aantalLichten - 1;
 		declaratie.aantalBasisonderdelen = declaratie.aantalBasisonderdelen -1;
 		declaratie.aantalRemmen = declaratie.aantalRemmen -1;
-
+		frame.list_log_client(""+declaratie.aantalKaders);
 	}
 
 	public static String getKader() {
