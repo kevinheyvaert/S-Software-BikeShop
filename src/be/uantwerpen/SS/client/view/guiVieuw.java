@@ -231,17 +231,14 @@ public class guiVieuw extends JFrame {
 		comboSelectType.addItem("Lichten");
 		comboSelectType.addItem("Basis");
 		comboSelectType.addActionListener(new ActionListener(){
-	            @Override
-	            public void actionPerformed(ActionEvent e) {
-	            	selectType = comboSelectType.getSelectedItem().toString();
-	            	if (comboSelectType.getSelectedItem().equals("") == true){
-	            		comboSelectType.setEnabled(true);
-	            	}
-	            	else{
-	            		comboSelectType.setEnabled(false);
-	            	}
-	            }
-	        });
+			@Override
+	        public void actionPerformed(ActionEvent e) {
+	         	selectType = comboSelectType.getSelectedItem().toString();
+	          	if (comboSelectType.getSelectedItem().equals("") != true){
+	           		comboSelectType.setEnabled(false);
+	           	}
+	        }
+	    });
 		stockPane.add(comboSelectType);
 		
 		comboSelectID = new JComboBox();
@@ -251,10 +248,7 @@ public class guiVieuw extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
         		selectID = comboSelectID.getSelectedItem().toString();
-            	if (comboSelectID.getSelectedItem().equals("") == true){
-            		comboSelectID.setEnabled(true);
-            	}
-            	else{
+            	if (comboSelectID.getSelectedItem().equals("") != true){
             		comboSelectID.setEnabled(false);
             	}
             }
@@ -538,6 +532,11 @@ public class guiVieuw extends JFrame {
 	    else{
 	        return "good";
 	    }
+	}
+	
+	public void enable_combo(){
+		comboSelectType.setEnabled(true);
+		comboSelectID.setEnabled(true);
 	}
 	
 	public void set_info_comboID(String amount, String descrition, String type, String id){

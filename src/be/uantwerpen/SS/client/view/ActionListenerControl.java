@@ -20,6 +20,7 @@ class ActionListenerControl implements ActionListener {
 			System.out.println("product add");
 			Main.addProduct();
 			Main.load_program();
+			Main.enable_combo();
 		}
 		else if(event.getActionCommand().equals("removeProduct")){
 			System.out.println("product remove");
