@@ -214,8 +214,6 @@ public class Main {
 		declaratie.aantalRemmen = declaratie.aantalRemmen -1;
 		frame.list_log_client(""+declaratie.aantalKaders);
 		
-		
-		
 	}
 
 	public static String getKader() {
