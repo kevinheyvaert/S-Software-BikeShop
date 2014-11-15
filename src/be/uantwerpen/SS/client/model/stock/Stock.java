@@ -13,15 +13,23 @@ import java.util.List;
 @XmlRootElement(name = "stock")
 public class Stock implements Serializable {
 
+	/**
+	 * Auto generated serialVersionUID
+	 */
+	private static final long serialVersionUID = -706270532090639321L;
+	
 	private List<Product> productList;
-	
-	
+
 	public Stock() {
 		this.productList = new ArrayList <Product>();
 	}
 	
 	public void addProduct(Product product) {
 		productList.add(product);
+	}
+	
+	public void removeProduct(Product product) {
+		productList.remove(product);
 	}
 	
 	@XmlElementRef

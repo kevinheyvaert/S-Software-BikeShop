@@ -29,76 +29,79 @@ import java.text.NumberFormat;
 import javax.swing.JList;
 
 public class guiVieuw extends JFrame {
-	public static final long serialVersionUID = 1L;
 	
-	public JPanel contentPane;
-	public JMenuBar menuBar;
+	/**
+	 * Auto generated serialVersionUID
+	 */
+	private static final long serialVersionUID = -5303356999041974564L;
 	
-	public JPanel stockPane;
-	public JComboBox comboID;
-	public JComboBox comboSelectID;
-	public JComboBox comboSelectType;
-	public JButton btnMoreStock;
-	public JButton btnLessStock;
-	public JButton btnEditDescription;
-	public JButton btnEditType;
-	public JButton btnEditID;
-	public JButton btnAddItemStock;
-	public JButton btnRemoveItemStock;
-	public JTextField txtValueProduct;
-	public JFormattedTextField txtValueInput;
-	public NumberFormat amountFormat;
-	public JTextField txtDescription;
-	public JLabel lblValueProduct;
-	public JLabel lblDescription;
-	public JLabel lblType;
-	public JLabel lblID;
+	private JPanel contentPane;
+	private JMenuBar menuBar;
+	
+	private JPanel stockPane;
+	private JComboBox<String> comboID;
+	private JComboBox<String> comboSelectID;
+	private JComboBox<String> comboSelectType;
+	private JButton btnMoreStock;
+	private JButton btnLessStock;
+	private JButton btnEditDescription;
+	private JButton btnEditType;
+	private JButton btnEditID;
+	private JButton btnAddItemStock;
+	private JButton btnRemoveItemStock;
+	private JTextField txtPriceBuy;
+	private JFormattedTextField txtValueInput;
+	private NumberFormat amountFormat;
+	private JTextField txtDescription;
+	private JLabel lblValueProduct;
+	private JLabel lblDescription;
+	private JLabel lblType;
+	private JLabel lblID;
 
-	public JPanel assamblerPane;
-	public JPanel panelKader;
-	public JPanel panelWielen;
-	public JPanel panelRemmen;
-	public JPanel panelLichten;
-	public JPanel panelBasic;
-	public JList<Object> lstKader;
-	public JList<Object> lstWielen;
-	public JList<Object> lstRemmen;
-	public JList<Object> lstLichten;
-	public JList<Object> lstBasic;
-	public DefaultListModel<String> modelKader = new DefaultListModel<String>();
-	public DefaultListModel<String> modelWielen = new DefaultListModel<String>();
-	public DefaultListModel<String> modelRemmen = new DefaultListModel<String>();
-	public DefaultListModel<String> modelLichten = new DefaultListModel<String>();
-	public DefaultListModel<String> modelBasic = new DefaultListModel<String>();
-	public JScrollPane scrollKader;
-	public JScrollPane scrollWielen;
-	public JScrollPane scrollRemmen;
-	public JScrollPane scrollLichten;
-	public JScrollPane scrollBasis;
-	public JLabel lblKader;
-	public JLabel lblWielen;
-	public JLabel lblRemmen;
-	public JLabel lblLichten;
-	public JLabel lblBasic;
+	private JPanel assamblerPane;
+	private JPanel panelKader;
+	private JPanel panelWielen;
+	private JPanel panelRemmen;
+	private JPanel panelLichten;
+	private JPanel panelBasic;
+	private JList<String> lstKader;
+	private JList<String> lstWielen;
+	private JList<String> lstRemmen;
+	private JList<String> lstLichten;
+	private JList<String> lstBasic;
+	private DefaultListModel<String> modelKader = new DefaultListModel<String>();
+	private DefaultListModel<String> modelWielen = new DefaultListModel<String>();
+	private DefaultListModel<String> modelRemmen = new DefaultListModel<String>();
+	private DefaultListModel<String> modelLichten = new DefaultListModel<String>();
+	private DefaultListModel<String> modelBasic = new DefaultListModel<String>();
+	private JScrollPane scrollKader;
+	private JScrollPane scrollWielen;
+	private JScrollPane scrollRemmen;
+	private JScrollPane scrollLichten;
+	private JScrollPane scrollBasis;
+	private JLabel lblKader;
+	private JLabel lblWielen;
+	private JLabel lblRemmen;
+	private JLabel lblLichten;
+	private JLabel lblBasic;
 	
-	public JPanel northPane;
-	public JPanel logPane;
-	public JList<Object> lstLog;
-	public DefaultListModel<String> modelLog = new DefaultListModel<String>();
-	public JScrollPane scrollLog;
+	private JPanel northPane;
+	private JPanel logPane;
+	private JList<String> lstLog;
+	private DefaultListModel<String> modelLog = new DefaultListModel<String>();
 	
-	public JPanel clientPane;
-	public JTextField txtClientName;
-	public JTextField txtClientNumber;
-	public JTextField txtClientAdress;
-	public JLabel lblClientPane;
-	public JButton btnAssemble;
-	public JButton btnAssembleSave;
-	public JLabel lblLog;
+	private JPanel clientPane;
+	private JTextField txtClientName;
+	private JTextField txtClientNumber;
+	private JTextField txtClientAdress;
+	private JLabel lblClientPane;
+	private JButton btnAssemble;
+	private JButton btnAssembleSave;
+	private JLabel lblLog;
 	
 	private String selectType;
 	private String selectID;
-	
+	private JTextField txtPriceSell;
 
 	/**
 	 * Create the frame.
@@ -215,14 +218,14 @@ public class guiVieuw extends JFrame {
 	
 	private void guiStock() {
 		
-		comboID = new JComboBox();
+		comboID = new JComboBox<>();
 		comboID.setBounds(22, 21, 112, 25);
 		comboID.addItem("");
 		comboID.setActionCommand("comboID");
 		comboID.addActionListener(new ActionListenerControl());
 		stockPane.add(comboID);
 		
-		comboSelectType = new JComboBox();
+		comboSelectType = new JComboBox<>();
 		comboSelectType.setEditable(true);
 		comboSelectType.setBounds(235, 101, 150, 22);
 		comboSelectType.addItem("Kader");
@@ -241,7 +244,7 @@ public class guiVieuw extends JFrame {
 	    });
 		stockPane.add(comboSelectType);
 		
-		comboSelectID = new JComboBox();
+		comboSelectID = new JComboBox<>();
 		comboSelectID.setEditable(true);
 		comboSelectID.setBounds(235, 126, 150, 25);
 		comboSelectID.addActionListener(new ActionListener(){
@@ -260,15 +263,19 @@ public class guiVieuw extends JFrame {
 		lblValueProduct.setBounds(160, 20, 100, 25);
 		stockPane.add(lblValueProduct);
 		
-		txtValueProduct = new JTextField();
-		txtValueProduct.setBounds(235, 20, 50, 25);
-		stockPane.add(txtValueProduct);
+		txtPriceBuy = new JTextField();
+		txtPriceBuy.setBounds(235, 20, 67, 25);
+		stockPane.add(txtPriceBuy);
 		
 		btnMoreStock = new JButton("+");
 		btnMoreStock.setBounds(403, 20, 30, 25);
 		btnMoreStock.setActionCommand("plus");
 		btnMoreStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnMoreStock);
+		
+		txtPriceSell = new JTextField();
+		txtPriceSell.setBounds(318, 20, 67, 25);
+		stockPane.add(txtPriceSell);
 		
 		btnLessStock = new JButton("-");
 		btnLessStock.setBounds(438, 20, 30, 25);
@@ -334,7 +341,7 @@ public class guiVieuw extends JFrame {
 		lblKader = new JLabel("Kader");
 		lblKader.setBounds(24, 12, 56, 16);
 		panelKader.add(lblKader);
-		lstKader = new JList(modelKader);
+		lstKader = new JList<String>(modelKader);
 		scrollKader = new JScrollPane(lstKader);
 		scrollKader.setBounds(15, 30, 175, 250);
 		panelKader.add(scrollKader);
@@ -342,7 +349,7 @@ public class guiVieuw extends JFrame {
 		lblWielen = new JLabel("Wielen");
 		lblWielen.setBounds(24, 12, 56, 16);
 		panelWielen.add(lblWielen);
-		lstWielen = new JList(modelWielen);
+		lstWielen = new JList<String>(modelWielen);
 		scrollWielen = new JScrollPane(lstWielen);
 		scrollWielen.setBounds(15, 30, 175, 250);
 		panelWielen.add(scrollWielen);
@@ -350,7 +357,7 @@ public class guiVieuw extends JFrame {
 		lblRemmen = new JLabel("Remmen");
 		lblRemmen.setBounds(24, 12, 56, 16);
 		panelRemmen.add(lblRemmen);
-		lstRemmen = new JList(modelRemmen);
+		lstRemmen = new JList<String>(modelRemmen);
 		scrollRemmen = new JScrollPane(lstRemmen);
 		scrollRemmen.setBounds(15, 30, 175, 250);
 		panelRemmen.add(scrollRemmen);
@@ -358,7 +365,7 @@ public class guiVieuw extends JFrame {
 		lblLichten = new JLabel("Lichten");
 		lblLichten.setBounds(24, 12, 56, 16);
 		panelLichten.add(lblLichten);
-		lstLichten = new JList(modelLichten);
+		lstLichten = new JList<String>(modelLichten);
 		scrollLichten = new JScrollPane(lstLichten);
 		scrollLichten.setBounds(15, 30, 175, 250);
 		panelLichten.add(scrollLichten);
@@ -366,7 +373,7 @@ public class guiVieuw extends JFrame {
 		lblBasic = new JLabel("Basis");
 		lblBasic.setBounds(24, 12, 56, 16);
 		panelBasic.add(lblBasic);
-		lstBasic = new JList(modelBasic);
+		lstBasic = new JList<String>(modelBasic);
 		scrollBasis = new JScrollPane(lstBasic);
 		scrollBasis.setBounds(15, 30, 175, 250);
 		panelBasic.add(scrollBasis);
@@ -379,7 +386,7 @@ public class guiVieuw extends JFrame {
 	}
 	
 	private void guiClient() {
-		lstLog = new JList(modelLog);
+		lstLog = new JList<String>(modelLog);
 		lstLog.setBounds(24, 20, 520, 120);
 	    logPane.add(lstLog);
 
@@ -486,7 +493,7 @@ public class guiVieuw extends JFrame {
 	}
 
 	public String get_textValueProduct() {
-		String textFieldValue = txtValueProduct.getText();
+		String textFieldValue = txtPriceBuy.getText();
 		return textFieldValue;
 	}
 	
@@ -534,17 +541,49 @@ public class guiVieuw extends JFrame {
 	    }
 	}
 	
+	
+	
 	public void enable_combo(){
 		comboSelectType.setEnabled(true);
 		comboSelectID.setEnabled(true);
 	}
 	
-	public void set_info_comboID(String amount, String descrition, String type, String id){
-		txtValueProduct.setText(amount);
+	public void set_info_comboID(String priceBuy, String priceSell, String descrition, String type, String id, String amount){
+		txtValueInput.setText(amount);
+		txtPriceBuy.setText(priceBuy);
+		txtPriceSell.setText(priceSell);
 		txtDescription.setText(descrition);
 		comboSelectType.setSelectedItem(type);
 		comboSelectType.setEnabled(false);
 		comboSelectID.setSelectedItem(id);
 		comboSelectID.setEnabled(false);
+	}
+
+	public void clearModel() {
+		modelKader.clear();
+		modelWielen.clear();
+		modelRemmen.clear(); 
+		modelLichten.clear();
+		modelBasic.clear();
+	}
+	
+	public void inc_dec_Product(String sign){
+		if(sign == "+"){
+			int amount = Integer.parseInt(txtValueInput.getText());
+			amount +=1;
+			String put = ""+amount;
+			txtValueInput.setText(put);
+		}
+		else if(sign == "-"){
+			int amount = Integer.parseInt(txtValueInput.getText());
+			if(amount == 0){
+				//NOTHING can't go under 0
+			}
+			else{
+				amount -=1;
+				String put = ""+amount;
+				txtValueInput.setText(put);
+			}
+		}
 	}
 }

@@ -46,58 +46,49 @@ public abstract class Product {
 		this.aantal = aantal;
 	}
 
-	public String getiD()
-	{
-		return iD;
-		
+	public String getiD(){
+		return iD;	
 	}
 	
-	public String getNaam()
-	{
+	public String getNaam(){
 		return naam;
-		
 	}
 	
-	public String getOmschrijving()
-	{
-		return omschrijving;
-		
+	public String getOmschrijving(){
+		return omschrijving;	
 	}
 	
-	public String getInkoopPrijs()
-	{
-		return inkoopPrijs;
-		
+	public String getInkoopPrijs(){
+		return inkoopPrijs;	
 	}
 	
-	public String getVerkoopPrijs()
-	{
-		return verkoopPrijs;
-		
+	public String getVerkoopPrijs(){
+		return verkoopPrijs;	
 	}
 	
-	public String getKleur()
-	{
+	public String getKleur(){
 		return null;
-
 	}
 	
-	public String getType()
-	{
+	public String getType(){
 		return null;
-
 	}
 	
-	public String getMaat()
-	{
+	public String getMaat(){
 		return null;
 	}
 	
 	
 	public void Bekijken(){
 	}
-	public void Bewerken(){
+	
+	public void Bewerken(String aantal, String inkoopPrijs, String verkoopPrijs, String omschrijving){
+		this.aantal = Integer.parseInt(aantal);
+		this.inkoopPrijs = inkoopPrijs;
+		this.verkoopPrijs = verkoopPrijs;
+		this.omschrijving = omschrijving;
 	}
+	
 	public void Vewijderen(){
 	}
 	public void Vermeerderen(){

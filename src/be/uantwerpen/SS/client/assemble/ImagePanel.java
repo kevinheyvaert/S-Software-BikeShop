@@ -9,7 +9,12 @@ import javax.swing.JPanel;
 
 class ImagePanel extends JPanel {
 
-	  private Image img;
+	 /**
+	 * Auto generated serialVersionUID
+	 */
+	private static final long serialVersionUID = -6655807906247741469L;
+	
+	private Image img;
 
 	  public ImagePanel(String img) {
 	    this(new ImageIcon(img).getImage());

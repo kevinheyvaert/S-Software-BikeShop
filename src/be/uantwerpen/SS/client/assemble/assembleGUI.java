@@ -5,8 +5,6 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
-import javax.swing.JTextPane;
-import javax.swing.JTable;
 
 public class assembleGUI extends JFrame{
 	public static final long serialVersionUID = 1L; 

@@ -19,7 +19,7 @@ class ActionListenerControl implements ActionListener {
 		else if(event.getActionCommand().equals("addProduct")){
 			System.out.println("product add");
 			Main.addProduct();
-			Main.load_program();
+			Main.load_list();
 			Main.enable_combo();
 		}
 		else if(event.getActionCommand().equals("removeProduct")){
