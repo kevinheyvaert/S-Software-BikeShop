@@ -283,8 +283,13 @@ public class Main {
 	{
 		aantalFietsen = aantalFietsen +1;
 		
+		String strName = frame.get_textNaam();
+		String strNumber = frame.get_textNummer();
+		String strAdress = frame.get_textAdress();
+		
+		
 		//FIXME \t werkt precies niet in frames
-		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen);
+		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders + "      "+strName +"    " + strNumber  + "          " + strAdress);
 		
 		declaratie.aantalKaders[0] -= 1;
 		declaratie.aantalWielen[0] -= 1;
