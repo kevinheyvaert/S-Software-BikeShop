@@ -199,8 +199,13 @@ public class Main {
 	{
 		aantalFietsen = aantalFietsen +1;
 		
+		String strName = frame.get_textNaam();
+		String strNumber = frame.get_textNummer();
+		String strAdress = frame.get_textAdress();
+		
+		
 		//FIXME \t werkt precies niet in frames
-		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders);
+		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders + "      "+strName +"    " + strNumber  + "          " + strAdress);
 		
 		declaratie.aantalKaders = declaratie.aantalKaders - 1;
 		declaratie.aantalWielen = declaratie.aantalWielen - 1;
@@ -208,6 +213,9 @@ public class Main {
 		declaratie.aantalBasisonderdelen = declaratie.aantalBasisonderdelen -1;
 		declaratie.aantalRemmen = declaratie.aantalRemmen -1;
 		frame.list_log_client(""+declaratie.aantalKaders);
+		
+		
+		
 	}
 
 	public static String getKader() {

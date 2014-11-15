@@ -456,6 +456,21 @@ public class guiVieuw extends JFrame {
 		String textFieldValue = txtValueProduct.getText();
 		return textFieldValue;
 	}
+	
+	public String get_textNaam() {
+		String textFieldNaam = txtClientName.getText();
+		return textFieldNaam;
+	}
+	
+	public String get_textNummer() {
+		String textFieldNummer = txtClientNumber.getText();
+		return textFieldNummer;
+	}
+	
+	public String get_textAdress() {
+		String textFieldAdress = txtClientAdress.getText();
+		return textFieldAdress;
+	}
 
 	public String get_lstSelected_kader() {
 		String select = get_selected(lstKader.getSelectedIndex());
