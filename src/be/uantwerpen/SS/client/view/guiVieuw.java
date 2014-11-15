@@ -3,6 +3,8 @@ package be.uantwerpen.SS.client.view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
@@ -33,8 +35,9 @@ public class guiVieuw extends JFrame {
 	public JMenuBar menuBar;
 	
 	public JPanel stockPane;
-	public JComboBox comboProduct;
-	public JButton	btnMoreProduct;
+	public JComboBox comboID;
+	public JComboBox comboSelectID;
+	public JComboBox comboSelectType;
 	public JButton btnMoreStock;
 	public JButton btnLessStock;
 	public JButton btnEditDescription;
@@ -46,8 +49,6 @@ public class guiVieuw extends JFrame {
 	public JFormattedTextField txtValueInput;
 	public NumberFormat amountFormat;
 	public JTextField txtDescription;
-	public JTextField txtType;
-	public JTextField txtID;
 	public JLabel lblValueProduct;
 	public JLabel lblDescription;
 	public JLabel lblType;
@@ -94,6 +95,9 @@ public class guiVieuw extends JFrame {
 	public JButton btnAssemble;
 	public JButton btnAssembleSave;
 	public JLabel lblLog;
+	
+	private String selectType;
+	private String selectID;
 	
 
 	/**
@@ -162,12 +166,12 @@ public class guiVieuw extends JFrame {
         JMenuItem eMenuItem = new JMenuItem("Exit", icon);
         eMenuItem.setToolTipText("Exit application"); 
         eMenuItem.setActionCommand("exitProgram");
-        eMenuItem.addActionListener(new ListenerActions());
+        eMenuItem.addActionListener(new ActionListenerControl());
         
         JMenuItem mntmOpen = new JMenuItem("Open");
         mntmOpen.setToolTipText("Een project openen"); 
         mntmOpen.setActionCommand("openProject");
-        mntmOpen.addActionListener(new ListenerActions());
+        mntmOpen.addActionListener(new ActionListenerControl());
         file.add(mntmOpen);
 
         file.add(eMenuItem);
@@ -180,13 +184,13 @@ public class guiVieuw extends JFrame {
         JMenuItem mntmBeheren = new JMenuItem("Beheren");
         mntmBeheren.setToolTipText("Klantenlijst beheren"); 
         mntmBeheren.setActionCommand("openClient");
-        mntmBeheren.addActionListener(new ListenerActions());
+        mntmBeheren.addActionListener(new ActionListenerControl());
         mnKlanten.add(mntmBeheren);
         
         JMenuItem mntmInstellingen = new JMenuItem("Instellingen");
         mntmInstellingen.setToolTipText("Klantenlijst instellen"); 
         mntmInstellingen.setActionCommand("settingClient");
-        mntmInstellingen.addActionListener(new ListenerActions());
+        mntmInstellingen.addActionListener(new ActionListenerControl());
         mnKlanten.add(mntmInstellingen);
         
         JMenu mnHelp = new JMenu("Help");
@@ -194,13 +198,13 @@ public class guiVieuw extends JFrame {
         
         JMenuItem mntmCredits = new JMenuItem("Credits");
         mntmCredits.setActionCommand("credits");
-        mntmCredits.addActionListener(new ListenerActions());
+        mntmCredits.addActionListener(new ActionListenerControl());
         mnHelp.add(mntmCredits);
         
         JMenuItem mntmHelpf = new JMenuItem("Help (F1)");
         mntmHelpf.setToolTipText("Helpfunctie voor begeleiding programma"); 
         mntmHelpf.setActionCommand("help");
-        mntmHelpf.addActionListener(new ListenerActions());
+        mntmHelpf.addActionListener(new ActionListenerControl());
         mnHelp.add(mntmHelpf);
         
         setLocationRelativeTo(null);
@@ -210,19 +214,52 @@ public class guiVieuw extends JFrame {
     }
 	
 	private void guiStock() {
-		//-----------------------------------
-		comboProduct = new JComboBox();			//dropdownmunue
-		comboProduct.addItem("Kader");
-		comboProduct.addItem("Wielen");
-		comboProduct.addItem("Remmen");
-		comboProduct.addItem("Lichten");
-		comboProduct.addItem("Basis");
-		comboProduct.setBounds(15, 20, 100, 25);
-		stockPane.add(comboProduct);
 		
-		btnMoreProduct = new JButton("...");
-		btnMoreProduct.setBounds(115, 20, 20, 25);
-		stockPane.add(btnMoreProduct);
+		comboID = new JComboBox();
+		comboID.setBounds(22, 21, 112, 25);
+		comboID.setActionCommand("comboID");
+		comboID.addActionListener(new ActionListenerControl());
+		stockPane.add(comboID);
+		
+		comboSelectType = new JComboBox();
+		comboSelectType.setEditable(true);
+		comboSelectType.setBounds(235, 101, 150, 22);
+		comboSelectType.addItem("Kader");
+		comboSelectType.addItem("Wielen");
+		comboSelectType.addItem("Remmen");
+		comboSelectType.addItem("Lichten");
+		comboSelectType.addItem("Basis");
+		comboSelectType.addActionListener(new ActionListener(){
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	            	selectType = comboSelectType.getSelectedItem().toString();
+	            	if (comboSelectType.getSelectedItem().equals("") == true){
+	            		comboSelectType.setEnabled(true);
+	            	}
+	            	else{
+	            		comboSelectType.setEnabled(false);
+	            	}
+	            }
+	        });
+		stockPane.add(comboSelectType);
+		
+		comboSelectID = new JComboBox();
+		comboSelectID.setEditable(true);
+		comboSelectID.setBounds(235, 126, 150, 25);
+		comboSelectID.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+        		selectID = comboSelectID.getSelectedItem().toString();
+            	if (comboSelectID.getSelectedItem().equals("") == true){
+            		comboSelectID.setEnabled(true);
+            	}
+            	else{
+            		comboSelectID.setEnabled(false);
+            	}
+            }
+        });
+		stockPane.add(comboSelectID);
+		
 		//-----------------------------------
 		lblValueProduct = new JLabel("Prijs");
 		lblValueProduct.setBounds(160, 20, 100, 25);
@@ -235,13 +272,13 @@ public class guiVieuw extends JFrame {
 		btnMoreStock = new JButton("+");
 		btnMoreStock.setBounds(403, 20, 30, 25);
 		btnMoreStock.setActionCommand("plus");
-		btnMoreStock.addActionListener(new ListenerActions());
+		btnMoreStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnMoreStock);
 		
 		btnLessStock = new JButton("-");
 		btnLessStock.setBounds(438, 20, 30, 25);
 		btnLessStock.setActionCommand("min");
-		btnLessStock.addActionListener(new ListenerActions());
+		btnLessStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnLessStock);
 		
 		amountFormat = NumberFormat.getNumberInstance();
@@ -268,10 +305,6 @@ public class guiVieuw extends JFrame {
 		lblType.setBounds(160, 100, 100, 25);
 		stockPane.add(lblType);
 		
-		txtType = new JTextField();
-		txtType.setBounds(235, 100, 150, 25);
-		stockPane.add(txtType);
-		
 		btnEditType = new JButton("bewerk");
 		btnEditType.setBounds(403, 100, 100, 25);
 		stockPane.add(btnEditType);
@@ -279,10 +312,6 @@ public class guiVieuw extends JFrame {
 		lblID = new JLabel("ID");
 		lblID.setBounds(160, 125, 100, 25);
 		stockPane.add(lblID);
-		
-		txtID = new JTextField();
-		txtID.setBounds(235, 125, 150, 25);
-		stockPane.add(txtID);
 		
 		btnEditID = new JButton("bewerk");
 		btnEditID.setBounds(403, 125, 100, 25);
@@ -294,14 +323,14 @@ public class guiVieuw extends JFrame {
 		btnAddItemStock.setBackground(Color.GREEN);
 		btnAddItemStock.setBounds(540, 20, 100, 50);
 		btnAddItemStock.setActionCommand("addProduct");
-		btnAddItemStock.addActionListener(new ListenerActions());
+		btnAddItemStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnAddItemStock);
 		
 		btnRemoveItemStock = new JButton("verwijderen");
 		btnRemoveItemStock.setBackground(Color.RED);
 		btnRemoveItemStock.setBounds(540, 100, 100, 50);
 		btnRemoveItemStock.setActionCommand("removeProduct");
-		btnRemoveItemStock.addActionListener(new ListenerActions());
+		btnRemoveItemStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnRemoveItemStock);
 	}
 	
@@ -362,7 +391,7 @@ public class guiVieuw extends JFrame {
 		btnAssemble = new JButton("Assemble");
 		btnAssemble.setBounds(121, 112, 117, 25);
 		btnAssemble.setActionCommand("assemble");
-		btnAssemble.addActionListener(new ListenerActions());
+		btnAssemble.addActionListener(new ActionListenerControl());
 	    clientPane.add(btnAssemble);
 	    
 	    btnAssembleSave = new JButton("Save");
@@ -408,6 +437,10 @@ public class guiVieuw extends JFrame {
         JOptionPane.showMessageDialog(null, panel);
     }
 	
+	public void add_to_list_combobox(String data){
+		comboID.addItem(data);
+	}
+	
 	public void list_log_client(String data) {
 		modelLog.addElement(data);
 	}
@@ -432,11 +465,6 @@ public class guiVieuw extends JFrame {
 		modelBasic.addElement(data);
 	}
 
-	public Object comboProduct() {
-		Object cmboitem = comboProduct.getSelectedItem();
-		return cmboitem;
-	}
-
 	public String get_textValue() {
 		String textFieldValue = txtValueInput.getText();
 		return textFieldValue;
@@ -447,9 +475,19 @@ public class guiVieuw extends JFrame {
 		return textFieldDescription;
 	}
 
-	public String get_textID() {
-		String textFieldID = txtID.getText();
-		return textFieldID;
+	public String comboProduct() {
+		String cmboitem = selectType;
+		return cmboitem;
+	}
+	
+	public String get_ID() {
+		String ID = selectID;
+		return ID;
+	}
+	
+	public String get_editID() {
+		String ID = comboID.getSelectedItem().toString();
+		return ID;
 	}
 
 	public String get_textValueProduct() {
@@ -484,5 +522,14 @@ public class guiVieuw extends JFrame {
 	    else{
 	        return "good";
 	    }
+	}
+	
+	public void set_info_comboID(String amount, String descrition, String type, String id){
+		txtValueProduct.setText(amount);
+		txtDescription.setText(descrition);
+		comboSelectType.setSelectedItem(type);
+		comboSelectType.setEnabled(false);
+		comboSelectID.setSelectedItem(id);
+		comboSelectID.setEnabled(false);
 	}
 }

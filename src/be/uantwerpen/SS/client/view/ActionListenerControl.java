@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import be.uantwerpen.SS.client.assemble.assembleGUI;
 
-class ListenerActions implements ActionListener {
+class ActionListenerControl implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("exitProgram")){
 			System.exit(0);
@@ -39,10 +39,12 @@ class ListenerActions implements ActionListener {
 			String rem = Main.getRem();
 			String licht = Main.getLicht();
 			
-			
-			
 			assembleGUI frameBike = new assembleGUI(kader, wiel, rem, licht, "bad");
 			frameBike.setVisible(true);
+		}
+		
+		else if(event.getActionCommand().equals("comboID")){
+			Main.load_id_data();
 		}
     }
 }
