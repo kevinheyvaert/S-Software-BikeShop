@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<verkoopsRapport>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Matthias</naam>
+            <nummer>1</nummer>
+            <adres>Eyermanstraat</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+</verkoopsRapport>

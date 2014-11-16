@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stock>
+    <kader>
+        <iD>1</iD>
+        <naam>kader_test1</naam>
+        <omschrijving></omschrijving>
+        <inkoopPrijs></inkoopPrijs>
+        <verkoopPrijs></verkoopPrijs>
+        <aantal>0</aantal>
+        <graverenDefaultWaarde>false</graverenDefaultWaarde>
+        <kleur>wit</kleur>
+    </kader>
+    <kader>
+        <iD>3</iD>
+        <naam>kader</naam>
+        <omschrijving>eerte GUI kader</omschrijving>
+        <inkoopPrijs>123</inkoopPrijs>
+        <verkoopPrijs>123</verkoopPrijs>
+        <aantal>4</aantal>
+        <graverenDefaultWaarde>false</graverenDefaultWaarde>
+        <kleur>wit</kleur>
+    </kader>
+    <licht>
+        <iD>4</iD>
+        <naam>lichten</naam>
+        <omschrijving>eerste GUI licht</omschrijving>
+        <inkoopPrijs>12</inkoopPrijs>
+        <verkoopPrijs>12</verkoopPrijs>
+        <aantal>5</aantal>
+        <type>Smart</type>
+    </licht>
+    <rem>
+        <iD>5</iD>
+        <naam>remmen</naam>
+        <omschrijving>eerste GUI Rem</omschrijving>
+        <inkoopPrijs>12</inkoopPrijs>
+        <verkoopPrijs>12</verkoopPrijs>
+        <aantal>5</aantal>
+        <type>V-Brakes</type>
+    </rem>
+    <basisonderdelen>
+        <iD>2</iD>
+        <naam>basisonderdelen</naam>
+        <omschrijving>eerste GUI Basisset</omschrijving>
+        <inkoopPrijs>50</inkoopPrijs>
+        <verkoopPrijs>50</verkoopPrijs>
+        <aantal>5</aantal>
+        <type>Type 1</type>
+    </basisonderdelen>
+    <wiel>
+        <iD>6</iD>
+        <naam>wiel</naam>
+        <omschrijving>eerste GUI Wielen</omschrijving>
+        <inkoopPrijs>50</inkoopPrijs>
+        <verkoopPrijs>50</verkoopPrijs>
+        <aantal>5</aantal>
+        <maat>universeel</maat>
+        <type>Standaard</type>
+    </wiel>
+    <kader>
+        <iD>7</iD>
+        <naam>kader_test7</naam>
+        <omschrijving></omschrijving>
+        <inkoopPrijs></inkoopPrijs>
+        <verkoopPrijs></verkoopPrijs>
+        <aantal>0</aantal>
+        <graverenDefaultWaarde>false</graverenDefaultWaarde>
+        <kleur>wit</kleur>
+    </kader>
+</stock>

@@ -8,11 +8,16 @@ import be.uantwerpen.SS.client.model.stock.Licht;
 import be.uantwerpen.SS.client.model.stock.Rem;
 import be.uantwerpen.SS.client.model.stock.Stock;
 import be.uantwerpen.SS.client.model.stock.Wiel;
+import be.uantwerpen.SS.client.model.verkoopsRapport.Fiets;
+import be.uantwerpen.SS.client.model.verkoopsRapport.Klant;
+import be.uantwerpen.SS.client.model.verkoopsRapport.Verkoop;
+import be.uantwerpen.SS.client.model.verkoopsRapport.VerkoopsRapport;
 import be.uantwerpen.SS.client.data.declaratie;
 
 public class Main {
 	public static guiVieuw frame = new guiVieuw();
 	public static Stock bikeShopStock1 = new Stock(); //TODO : From BikeshopMain --> beter implementeren 
+	public static VerkoopsRapport bikeShopVerkoopsRapport1 = new VerkoopsRapport(); 
 	public static int aantalFietsen;
 	public static boolean debug;
 	public static void main(String[] args) {
@@ -42,6 +47,7 @@ public class Main {
 	
 	public static void init_program(){
 		bikeShopStock1.getStockFromXml();
+		bikeShopVerkoopsRapport1.getVerkoopsRapportFromXml();
 		if (debug) System.out.println("Loading stock :");
 		for(int i=0;i<bikeShopStock1.getProductList().size();i++){
 			if (debug) System.out.println("Stock Contains:");
@@ -354,18 +360,23 @@ public class Main {
 		
 		String strName = frame.get_textNaam();
 		String strNumber = frame.get_textNummer();
-		String strAdress = frame.get_textAdress();
-		
+		String strAddress = frame.get_textAdress();
 		
 		//FIXME \t werkt precies niet in frames
-		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders + "      "+strName +"    " + strNumber  + "          " + strAdress);
+		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders + "      "+strName +"    " + strNumber  + "          " + strAddress);
 		
 		declaratie.aantalKaders[0] -= 1;
 		declaratie.aantalWielen[0] -= 1;
 		declaratie.aantalLichten[0] -= 1;
 		declaratie.aantalBasisonderdelen[0] -= 1;
 		declaratie.aantalRemmen[0] -= 1;
-
+		
+		
+		//added by MDS
+		Klant klant = new Klant(strName, strNumber, strAddress);
+		Fiets fiets	= new Fiets("mijn eerste fietsje", "1", "2", "3", "4", "5"); //TODO @ Kevin R kan je zorgen dat hier de geselcteerde ID's terechtkomen ipv mijn dummy 1 2 3's...?
+		bikeShopVerkoopsRapport1.addVerkoop(new Verkoop(klant, fiets));	
+		bikeShopVerkoopsRapport1.saveVerkoopsRapportToXml();
 	}
 
 	public static String getKader() {

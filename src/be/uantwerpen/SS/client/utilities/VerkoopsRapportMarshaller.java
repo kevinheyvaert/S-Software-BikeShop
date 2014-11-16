@@ -5,20 +5,20 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import be.uantwerpen.SS.client.model.stock.Stock;
+import be.uantwerpen.SS.client.model.verkoopsRapport.VerkoopsRapport;
 
 import java.io.*;
 
-public class StockMarshaller {
+public class VerkoopsRapportMarshaller {
 	JAXBContext context = null;
-    public void marshalStockToXML(Stock stock) {
+    public void marshalVerkoopsRapportToXML(VerkoopsRapport verkoopsRapport) {
         StringWriter writer = new StringWriter();
         try {
-            context = JAXBContext.newInstance("be.uantwerpen.SS.client.model.stock");
+            context = JAXBContext.newInstance("be.uantwerpen.SS.client.model.verkoopsRapport");
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            m.marshal(stock, writer);
-            File file = new File("stock.xml");
+            m.marshal(verkoopsRapport, writer);
+            File file = new File("verkoopsRapport.xml");
             FileWriter fw =null;
             BufferedWriter bw = null;
             try {
@@ -36,19 +36,19 @@ public class StockMarshaller {
         }
     }
 
-    public Stock unmarshalStockFromXML(){
+    public VerkoopsRapport unmarshalVerkoopsRapportFromXML(){
     	JAXBContext context = null;
-        Stock stock = null;
-        File file = new File("stock.xml");
+        VerkoopsRapport verkoopsRapport = null;
+        File file = new File("verkoopsRapport.xml");
         try {
-            context = JAXBContext.newInstance("be.uantwerpen.SS.client.model.stock");
+            context = JAXBContext.newInstance("be.uantwerpen.SS.client.model.verkoopsRapport");
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            stock = (Stock) unmarshaller.unmarshal(file);
-            return stock;
+            verkoopsRapport = (VerkoopsRapport) unmarshaller.unmarshal(file);
+            return verkoopsRapport;
         } catch (JAXBException e) {
             System.err.printf("\nSomething went wrong initializing the unmarshaller.\n%s", e.getMessage());
             e.printStackTrace();
         }
-        return stock;
+        return verkoopsRapport;
     }
 }

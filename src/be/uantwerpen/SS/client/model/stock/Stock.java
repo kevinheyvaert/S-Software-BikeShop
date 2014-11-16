@@ -52,7 +52,7 @@ public class Stock implements Serializable {
 	
 	public boolean getStockFromXml() {
 		StockMarshaller xmlMarshaller = new StockMarshaller();
-		Stock tempStock = (Stock) xmlMarshaller.unmarshalStockToXML();
+		Stock tempStock = (Stock) xmlMarshaller.unmarshalStockFromXML();
 
 		if (tempStock != null) {
 			this.productList = tempStock.getProductList();
