@@ -270,6 +270,7 @@ public class guiVieuw extends JFrame {
 		btnMoreStock = new JButton("+");
 		btnMoreStock.setBounds(403, 20, 30, 25);
 		btnMoreStock.setActionCommand("plus");
+		//btnLessStock.setActionCommand("veranderAantal");
 		btnMoreStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnMoreStock);
 		
@@ -280,6 +281,7 @@ public class guiVieuw extends JFrame {
 		btnLessStock = new JButton("-");
 		btnLessStock.setBounds(438, 20, 30, 25);
 		btnLessStock.setActionCommand("min");
+		//btnLessStock.setActionCommand("veranderAantal");
 		btnLessStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnLessStock);
 		
@@ -585,5 +587,6 @@ public class guiVieuw extends JFrame {
 				txtValueInput.setText(put);
 			}
 		}
+		
 	}
 }

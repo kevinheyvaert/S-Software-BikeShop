@@ -187,6 +187,43 @@ public class Main {
 		}
     }
 	
+	
+	//#kevin
+	//FIXME ik heb onderstaande code gekopieerd om zo amount te kunnen + en - te doen met de knoppen en dat dit ook zo zal werken met de changeExistingXMLTag functie
+	// moet nog ergens upgedate worden met een set_value methode die nog moet worden aangemaakt en dan zou dit moeten werken
+	// kan ook deze onderstaande code verwijderd worde in de guiVieuw
+	
+	public static void inc_dec_Product(String sign)
+	{
+		if(sign == "+"){
+			int amount = Integer.parseInt(frame.get_textValueProduct());
+			amount +=1;
+			String put = ""+amount;
+			//frame.txtxValueInput.setText(put);
+		}
+		else if(sign == "-"){
+			int amount = Integer.parseInt(frame.get_textValueProduct());
+			if(amount == 0){
+				//NOTHING can't go under 0
+			}
+			else{
+				amount -=1;
+				String put = ""+amount;
+				//txtValueInput.setText(put);
+			}
+		}
+		
+		String typeProduct = frame.comboProduct();
+		String strAmount = frame.get_textValue();
+		String strPriceSell= frame.get_textValueProduct();
+		String strPriceBuy= frame.get_textValueProduct();
+		String strOmschrijving = frame.get_textDescription();
+		String idProduct = frame.get_ID();
+		
+		changeExistingXMLtag(typeProduct, strAmount, strPriceBuy, strPriceSell, strOmschrijving, idProduct);
+		
+	}
+	
 	/**
 	 * Functie om de te kijken of het product al reeds in het bestand zit
 	 * @param idProduct
