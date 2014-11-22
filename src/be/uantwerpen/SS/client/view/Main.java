@@ -183,7 +183,7 @@ public class Main {
 				changeExistingXMLtag(typeProduct, strAmount, strPriceBuy, strPriceSell, strOmschrijving, idProduct);
 			}
 			// stock opslaan
-	    	bikeShopStock1.saveStockToXml();
+	    	//bikeShopStock1.saveStockToXml();
 		}
     }
 	
@@ -348,7 +348,7 @@ public class Main {
 		//#kevin
 		//FIXME
 		
-		int amount = Integer.parseInt(frame.get_textValueProduct());
+		int amount = Integer.parseInt(frame.get_textValue());
 		amount +=1;
 		
 		String strAmount = ""+amount;
@@ -369,8 +369,24 @@ public class Main {
 	 * Product decrementen op gui
 	 */
 	public static void decProduct() {
-		frame.inc_dec_Product("-");
+
+		//#kevin
+		//FIXME
 		
+		int amount = Integer.parseInt(frame.get_textValue());
+		amount -=1;
+		
+		String strAmount = ""+amount;
+		
+		String typeProduct = frame.comboProduct();
+		//String strAmount = frame.get_textValue();
+		String strPriceSell= frame.get_textValueProduct();
+		String strPriceBuy= frame.get_textValueProduct();
+		String strOmschrijving = frame.get_textDescription();
+		String idProduct = frame.get_ID();
+		
+		frame.inc_dec_Product("-");
+		changeExistingXMLtag(typeProduct, strAmount, strPriceBuy, strPriceSell, strOmschrijving, idProduct);
 		
 	}
 	
@@ -448,5 +464,11 @@ public class Main {
 	 */
 	public static void enable_combo() {
 		frame.enable_combo();
+	}
+
+	public static void saveXml() {
+		
+		bikeShopStock1.saveStockToXml();
+		System.out.println("XML opgeslagen");
 	}
 }

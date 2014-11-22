@@ -12,9 +12,11 @@ class ActionListenerControl implements ActionListener {
 		}
 		else if(event.getActionCommand().equals("plus")){
 			Main.incProduct();
+			Main.load_list();
 		}
 		else if(event.getActionCommand().equals("min")){
 			Main.decProduct();
+			Main.load_list();
 		}
 		else if(event.getActionCommand().equals("addProduct")){
 			System.out.println("product add");
@@ -46,6 +48,9 @@ class ActionListenerControl implements ActionListener {
 		
 		else if(event.getActionCommand().equals("comboID")){
 			Main.load_id_data();
+		}
+		else if(event.getActionCommand().equals("save")){
+			Main.saveXml();
 		}
     }
 }

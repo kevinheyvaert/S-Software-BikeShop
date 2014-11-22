@@ -16,7 +16,7 @@
         <omschrijving>eerte GUI kader</omschrijving>
         <inkoopPrijs>123</inkoopPrijs>
         <verkoopPrijs>123</verkoopPrijs>
-        <aantal>25</aantal>
+        <aantal>26</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>

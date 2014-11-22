@@ -400,6 +400,8 @@ public class guiVieuw extends JFrame {
 	    
 	    btnAssembleSave = new JButton("Save");
 	    btnAssembleSave.setBounds(12, 112, 97, 25);
+	    btnAssembleSave.setActionCommand("save");
+		btnAssembleSave.addActionListener(new ActionListenerControl());
 	    clientPane.add(btnAssembleSave);
 	    
 	    lblClientPane = new JLabel("Klantengegevens");
