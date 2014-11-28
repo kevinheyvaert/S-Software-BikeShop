@@ -41,7 +41,8 @@ class ActionListenerControl implements ActionListener {
 			String wiel = Main.getWiel();
 			String rem = Main.getRem();
 			String licht = Main.getLicht();
-			
+			String basis = Main.getBasisOnderdelen();
+			Main.load_list();
 			assembleGUI frameBike = new assembleGUI(kader, wiel, rem, licht, "bad");
 			frameBike.setVisible(true);
 		}

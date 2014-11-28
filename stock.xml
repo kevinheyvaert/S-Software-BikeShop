@@ -13,10 +13,10 @@
     <kader>
         <iD>3</iD>
         <naam>kader</naam>
-        <omschrijving>eerte GUI kader</omschrijving>
+        <omschrijving>eerste GUI kader</omschrijving>
         <inkoopPrijs>123</inkoopPrijs>
         <verkoopPrijs>123</verkoopPrijs>
-        <aantal>26</aantal>
+        <aantal>21</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
@@ -26,7 +26,7 @@
         <omschrijving>eerste GUI licht</omschrijving>
         <inkoopPrijs>12</inkoopPrijs>
         <verkoopPrijs>12</verkoopPrijs>
-        <aantal>5</aantal>
+        <aantal>9</aantal>
         <type>Smart</type>
     </licht>
     <rem>
@@ -35,7 +35,7 @@
         <omschrijving>eerste GUI Rem</omschrijving>
         <inkoopPrijs>12</inkoopPrijs>
         <verkoopPrijs>12</verkoopPrijs>
-        <aantal>10</aantal>
+        <aantal>12</aantal>
         <type>V-Brakes</type>
     </rem>
     <basisonderdelen>

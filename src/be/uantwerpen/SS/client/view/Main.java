@@ -430,9 +430,16 @@ public class Main {
 		return strReturn;
 	}
 	
+	public static String getBasisOnderdelen() {
+		String strReturn = frame.get_lstSelected_basisonderdelen();
+		return strReturn;
+	}
+	
 	public static void list_combobox_update(String data){
 		frame.add_to_list_combobox(data);
 	}
+	
+	
 
 	/**
 	 * Uit combobox de selectie in gui laden
@@ -465,4 +472,6 @@ public class Main {
 		bikeShopStock1.saveStockToXml();
 		System.out.println("XML opgeslagen");
 	}
+
+	
 }

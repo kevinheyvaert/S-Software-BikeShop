@@ -536,6 +536,11 @@ public class guiVieuw extends JFrame {
 		return select;
 	}
 	
+	public String get_lstSelected_basisonderdelen() {
+		String select = get_selected(lstBasic.getSelectedIndex());
+		return select;
+	}
+	
 	public String get_selected(int index){
 		if (index < 0){
 	        return "bad";
@@ -591,4 +596,6 @@ public class guiVieuw extends JFrame {
 		}
 		
 	}
+
+	
 }
