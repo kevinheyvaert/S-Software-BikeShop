@@ -134,11 +134,11 @@ public class Main {
 	public static void load_list(){
 		frame.clearModel();
 		//TODO MOET NOG HELEMAAL AANGEPAST WORDEN
-		frame.list_kader( "Totaal Kader : "+ declaratie.aantalKaders[0]);
-		frame.list_wielen( "Totaal wiel : "+ declaratie.aantalWielen[0]);
-		frame.list_remmen( "Totaal remmen : "+ declaratie.aantalRemmen[0]);
-		frame.list_lichten( "Totaal lichten : "+ declaratie.aantalLichten[0]);
-		frame.list_basis( "Totaal Basisonderdelen : "+ declaratie.aantalBasisonderdelen[0]);
+		//frame.list_kader( "Totaal Kader : "+ declaratie.aantalKaders[0]);
+		//frame.list_wielen( "Totaal wiel : "+ declaratie.aantalWielen[0]);
+		//frame.list_remmen( "Totaal remmen : "+ declaratie.aantalRemmen[0]);
+		//frame.list_lichten( "Totaal lichten : "+ declaratie.aantalLichten[0]);
+		//frame.list_basis( "Totaal Basisonderdelen : "+ declaratie.aantalBasisonderdelen[0]);
 			
 		for(int i=0; i < declaratie.stock; i++){
 			if(declaratie.productKaders[i] != null)
@@ -345,9 +345,6 @@ public class Main {
 	 */
 	public static void incProduct() {
 		
-		//#kevin
-		//FIXME
-		
 		int amount = Integer.parseInt(frame.get_textValue());
 		amount +=1;
 		
@@ -370,9 +367,6 @@ public class Main {
 	 */
 	public static void decProduct() {
 
-		//#kevin
-		//FIXME
-		
 		int amount = Integer.parseInt(frame.get_textValue());
 		amount -=1;
 		
@@ -400,7 +394,7 @@ public class Main {
 		String strAddress = frame.get_textAdress();
 		
 		//FIXME \t werkt precies niet in frames
-		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " + declaratie.aantalKaders + "      "+strName +"    " + strNumber  + "          " + strAddress);
+		frame.list_log_client("ID : " + aantalFietsen + "      Fiets"+aantalFietsen + "                       " +strName +"    " + strNumber  + "          " + strAddress);
 		
 		declaratie.aantalKaders[0] -= 1;
 		declaratie.aantalWielen[0] -= 1;
