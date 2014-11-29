@@ -22,14 +22,14 @@ public abstract class Product {
 	private int aantal;
 	
 	/* Constructor */
-	public Product(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
+	public Product(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs, int aantal) {
 		this.iD = iD;
 		this.naam = naam;
 		this.omschrijving= omschrijving;
 		
 		this.inkoopPrijs=inkoopPrijs;
 		this.verkoopPrijs=verkoopPrijs;
-		this.aantal=0;
+		this.aantal=aantal;
 	}
 	
 	/* No-arg Constructor needed for XML marshalling */
@@ -46,7 +46,7 @@ public abstract class Product {
 		this.aantal = aantal;
 	}
 
-	public String getiD(){
+	public String getId(){
 		return iD;	
 	}
 	
@@ -82,8 +82,8 @@ public abstract class Product {
 	public void Bekijken(){
 	}
 	
-	public void Bewerken(String aantal, String inkoopPrijs, String verkoopPrijs, String omschrijving){
-		this.aantal = Integer.parseInt(aantal);
+	public void Bewerken(int aantal, String inkoopPrijs, String verkoopPrijs, String omschrijving){
+		this.aantal = aantal;
 		this.inkoopPrijs = inkoopPrijs;
 		this.verkoopPrijs = verkoopPrijs;
 		this.omschrijving = omschrijving;

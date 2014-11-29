@@ -8,8 +8,8 @@ import be.uantwerpen.SS.client.model.stock.Product;
 public class Basisonderdelen extends Product {
 	private String type;
 	
-	public Basisonderdelen(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
-		super(iD, naam, omschrijving, inkoopPrijs, verkoopPrijs);
+	public Basisonderdelen(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs, int aantal) {
+		super(iD, naam, omschrijving, inkoopPrijs, verkoopPrijs, aantal);
 		type = "Type 1";
 	}
 	

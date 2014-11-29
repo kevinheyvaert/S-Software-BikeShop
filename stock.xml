@@ -1,70 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <stock>
-    <kader>
-        <iD>1</iD>
-        <naam>kader_test1</naam>
-        <omschrijving></omschrijving>
-        <inkoopPrijs></inkoopPrijs>
-        <verkoopPrijs></verkoopPrijs>
-        <aantal>0</aantal>
-        <graverenDefaultWaarde>false</graverenDefaultWaarde>
-        <kleur>wit</kleur>
-    </kader>
-    <kader>
-        <iD>3</iD>
-        <naam>kader</naam>
-        <omschrijving>eerste GUI kader</omschrijving>
-        <inkoopPrijs>123</inkoopPrijs>
-        <verkoopPrijs>123</verkoopPrijs>
-        <aantal>21</aantal>
-        <graverenDefaultWaarde>false</graverenDefaultWaarde>
-        <kleur>wit</kleur>
-    </kader>
-    <licht>
-        <iD>4</iD>
-        <naam>lichten</naam>
-        <omschrijving>eerste GUI licht</omschrijving>
-        <inkoopPrijs>12</inkoopPrijs>
-        <verkoopPrijs>12</verkoopPrijs>
-        <aantal>9</aantal>
-        <type>Smart</type>
-    </licht>
-    <rem>
-        <iD>5</iD>
-        <naam>remmen</naam>
-        <omschrijving>eerste GUI Rem</omschrijving>
-        <inkoopPrijs>12</inkoopPrijs>
-        <verkoopPrijs>12</verkoopPrijs>
-        <aantal>12</aantal>
-        <type>V-Brakes</type>
-    </rem>
-    <basisonderdelen>
-        <iD>2</iD>
-        <naam>basisonderdelen</naam>
-        <omschrijving>eerste GUI Basisset</omschrijving>
-        <inkoopPrijs>50</inkoopPrijs>
-        <verkoopPrijs>50</verkoopPrijs>
-        <aantal>5</aantal>
-        <type>Type 1</type>
-    </basisonderdelen>
     <wiel>
-        <iD>6</iD>
-        <naam>wiel</naam>
-        <omschrijving>eerste GUI Wielen</omschrijving>
-        <inkoopPrijs>50</inkoopPrijs>
-        <verkoopPrijs>50</verkoopPrijs>
-        <aantal>5</aantal>
+        <iD>WIE1</iD>
+        <naam>Wielen</naam>
+        <omschrijving>Eerste Wiel</omschrijving>
+        <inkoopPrijs>40</inkoopPrijs>
+        <verkoopPrijs>40</verkoopPrijs>
+        <aantal>1</aantal>
         <maat>universeel</maat>
         <type>Standaard</type>
     </wiel>
     <kader>
-        <iD>7</iD>
-        <naam>kader_test7</naam>
-        <omschrijving></omschrijving>
-        <inkoopPrijs></inkoopPrijs>
-        <verkoopPrijs></verkoopPrijs>
-        <aantal>0</aantal>
+        <iD>KAD1</iD>
+        <naam>Kader</naam>
+        <omschrijving>Eerste Kader</omschrijving>
+        <inkoopPrijs>102</inkoopPrijs>
+        <verkoopPrijs>102</verkoopPrijs>
+        <aantal>1</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
+    <kader>
+        <iD>KAD2</iD>
+        <naam>Kader</naam>
+        <omschrijving>Tweede test Kader</omschrijving>
+        <inkoopPrijs>145</inkoopPrijs>
+        <verkoopPrijs>145</verkoopPrijs>
+        <aantal>1</aantal>
+        <graverenDefaultWaarde>false</graverenDefaultWaarde>
+        <kleur>wit</kleur>
+    </kader>
+    <rem>
+        <iD>REM1</iD>
+        <naam>remmen</naam>
+        <omschrijving>Test Rem</omschrijving>
+        <inkoopPrijs>20</inkoopPrijs>
+        <verkoopPrijs>20</verkoopPrijs>
+        <aantal>1</aantal>
+        <type>V-Brakes</type>
+    </rem>
+    <licht>
+        <iD>LIC1</iD>
+        <naam>Lichten</naam>
+        <omschrijving>LED Licht</omschrijving>
+        <inkoopPrijs>20</inkoopPrijs>
+        <verkoopPrijs>20</verkoopPrijs>
+        <aantal>1</aantal>
+        <type>Smart</type>
+    </licht>
+    <basisonderdelen>
+        <iD>BAS1</iD>
+        <naam>Basis</naam>
+        <omschrijving>Standaard set</omschrijving>
+        <inkoopPrijs>60</inkoopPrijs>
+        <verkoopPrijs>60</verkoopPrijs>
+        <aantal>8</aantal>
+        <type>Type 1</type>
+    </basisonderdelen>
 </stock>

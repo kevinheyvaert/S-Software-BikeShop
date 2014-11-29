@@ -21,11 +21,17 @@ public class Stock implements Serializable {
 	private List<Product> productList;
 
 	public Stock() {
-		this.productList = new ArrayList <Product>();
+		this.productList = new ArrayList<Product>();
 	}
 	
-	public void addProduct(Product product) {
+	public boolean addProduct(Product product) {
+		for (Product currentProduct : productList) {
+			if (currentProduct.getId().equals(product.getId())) { //do not allow 2 products with same ID
+				return false;
+			}
+		}
 		productList.add(product);
+		return true;
 	}
 	
 	public void removeProduct(Product product) {
@@ -37,10 +43,37 @@ public class Stock implements Serializable {
 		return productList;
 	}
 	
-	public int getTotalNumberOfProductsInStock() {
-		return productList.size();
+	public List<Product> getListOfInstance(Class classToMatch) {
+		List<Product> filteredList = new ArrayList<Product>();
+		if (classToMatch.equals(Product.class)) { //fast way to return complete list of Products without iterating
+			return productList;
+		}
+		else {	
+			for (Product product : productList) {
+				if (classToMatch.isInstance(product)) {
+					filteredList.add(product);
+				}
+			}
+		}
+		return filteredList;
 	}
+
 	
+	public int getNumberOfInstance(Class classToMatch) {
+		int numberOfInstances=0;
+		if (classToMatch.equals(Product.class)) { //fast way to count total number of Products without iterating
+			numberOfInstances = productList.size();
+		}
+		else {	
+			for (Product product : productList) {
+				if (classToMatch.isInstance(product)) {
+					numberOfInstances++;
+				}
+			}
+		}
+		return numberOfInstances;
+	}
+
 	/**
 	 * Saves all nodes on this server to an xml file so they can be recovered
 	 * later.

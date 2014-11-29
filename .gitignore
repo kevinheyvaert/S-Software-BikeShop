@@ -41,6 +41,8 @@ local.properties
 # PDT-specific
 .buildpath
 
+# class diagramm
+.ucls
 
 #################
 ## Visual Studio

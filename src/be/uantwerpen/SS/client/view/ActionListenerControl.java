@@ -29,7 +29,7 @@ class ActionListenerControl implements ActionListener {
 		}
 		else if(event.getActionCommand().equals("credits")){
 			System.out.println("credit");
-			guiVieuw.display();
+			GuiView.display();
 		}
 		else if(event.getActionCommand().equals("help")){
 			System.out.println("hulp gevraagd");

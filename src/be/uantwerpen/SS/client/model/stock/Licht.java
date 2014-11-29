@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Licht extends Product {
 	private String type;
 	
-	public Licht(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs) {
-		super(iD, naam, omschrijving, inkoopPrijs, verkoopPrijs);
+	public Licht(String iD, String naam, String omschrijving, String inkoopPrijs, String verkoopPrijs, int aantal) {
+		super(iD, naam, omschrijving, inkoopPrijs, verkoopPrijs, aantal);
 		type = "Smart";
 	}
 	

@@ -28,7 +28,7 @@ import java.text.NumberFormat;
 
 import javax.swing.JList;
 
-public class guiVieuw extends JFrame {
+public class GuiView extends JFrame {
 	
 	/**
 	 * Auto generated serialVersionUID
@@ -106,7 +106,7 @@ public class guiVieuw extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public guiVieuw() {
+	public GuiView() {
 		guiInit();
 				
 		guiMenu();
