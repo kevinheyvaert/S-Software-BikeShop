@@ -15,4 +15,94 @@
             <onderdeleniDList>5</onderdeleniDList>
         </fiets>
     </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>mijn eerste fietsje</fietsNaam>
+            <onderdeleniDList>1</onderdeleniDList>
+            <onderdeleniDList>2</onderdeleniDList>
+            <onderdeleniDList>3</onderdeleniDList>
+            <onderdeleniDList>4</onderdeleniDList>
+            <onderdeleniDList>5</onderdeleniDList>
+        </fiets>
+    </verkoop>
 </verkoopsRapport>

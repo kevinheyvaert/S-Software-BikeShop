@@ -517,27 +517,32 @@ public class GuiView extends JFrame {
 	}
 
 	public String get_lstSelected_kader() {
-		String select = get_selected(lstKader.getSelectedIndex());
+		String select = lstKader.getSelectedValue();
+		System.out.println(select);
 		return select;
 	}
 	
 	public String get_lstSelected_wielen() {
-		String select = get_selected(lstWielen.getSelectedIndex());
+		String select = lstWielen.getSelectedValue();
+		System.out.println(select);
 		return select;
 	}
 
 	public String get_lstSelected_remmen() {
-		String select = get_selected(lstRemmen.getSelectedIndex());
+		String select = lstRemmen.getSelectedValue();
+		System.out.println(select);
 		return select;
 	}
 
 	public String get_lstSelected_lichten() {
-		String select = get_selected(lstLichten.getSelectedIndex());
+		String select = lstLichten.getSelectedValue();
+		System.out.println(select);
 		return select;
 	}
 	
 	public String get_lstSelected_basisonderdelen() {
-		String select = get_selected(lstBasic.getSelectedIndex());
+		String select = lstBasic.getSelectedValue();
+		System.out.println(select);
 		return select;
 	}
 	

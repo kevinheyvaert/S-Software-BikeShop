@@ -194,6 +194,7 @@ public class Main {
 	public static String getKader() {
 		String strReturn = frame.get_lstSelected_kader();
 		return strReturn;
+		
 	}
 
 	public static String getWiel() {
