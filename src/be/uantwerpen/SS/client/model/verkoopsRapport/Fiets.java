@@ -26,6 +26,13 @@ public class Fiets {
 		onderdeleniDList.add(basisonderdelenId);
 	}
 	
+	/**
+	 * @return the fietsNaam
+	 */
+	public String getFietsNaam() {
+		return fietsNaam;
+	}
+
 	public Fiets(){
 	}
 	

@@ -12,20 +12,30 @@ class ActionListenerControl implements ActionListener {
 		}
 		else if(event.getActionCommand().equals("plus")){
 			Main.incProduct();
-			Main.load_list();
+			Main.updateProductSelectorView();
 		}
 		else if(event.getActionCommand().equals("min")){
 			Main.decProduct();
-			Main.load_list();
+			Main.updateProductSelectorView();
+		}
+		else if(event.getActionCommand().equals("newProduct")){
+			System.out.println("product New");
+			Main.newProduct();
+			Main.enable_combo();
 		}
 		else if(event.getActionCommand().equals("addProduct")){
 			System.out.println("product add");
 			Main.addProduct();
-			Main.load_list();
+			Main.enable_combo();
+		}
+		else if(event.getActionCommand().equals("editProduct")){
+			System.out.println("product edit");
+			Main.changeProduct();
 			Main.enable_combo();
 		}
 		else if(event.getActionCommand().equals("removeProduct")){
 			System.out.println("product remove");
+			Main.removeProduct();
 		}
 		else if(event.getActionCommand().equals("credits")){
 			System.out.println("credit");
@@ -42,9 +52,7 @@ class ActionListenerControl implements ActionListener {
 			String rem = Main.getRem();
 			String licht = Main.getLicht();
 			String basis = Main.getBasisOnderdelen();
-			Main.load_list();
-			assembleGUI frameBike = new assembleGUI(kader, wiel, rem, licht, "bad");
-			frameBike.setVisible(true);
+			Main.updateProductSelectorView();
 		}
 		
 		else if(event.getActionCommand().equals("comboID")){

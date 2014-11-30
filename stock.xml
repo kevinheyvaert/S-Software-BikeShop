@@ -6,7 +6,7 @@
         <omschrijving>Eerste Wiel</omschrijving>
         <inkoopPrijs>40</inkoopPrijs>
         <verkoopPrijs>40</verkoopPrijs>
-        <aantal>1</aantal>
+        <aantal>9</aantal>
         <maat>universeel</maat>
         <type>Standaard</type>
     </wiel>
@@ -16,7 +16,7 @@
         <omschrijving>Eerste Kader</omschrijving>
         <inkoopPrijs>102</inkoopPrijs>
         <verkoopPrijs>102</verkoopPrijs>
-        <aantal>1</aantal>
+        <aantal>4</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
@@ -26,7 +26,7 @@
         <omschrijving>Tweede test Kader</omschrijving>
         <inkoopPrijs>145</inkoopPrijs>
         <verkoopPrijs>145</verkoopPrijs>
-        <aantal>1</aantal>
+        <aantal>9</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
@@ -36,7 +36,7 @@
         <omschrijving>Test Rem</omschrijving>
         <inkoopPrijs>20</inkoopPrijs>
         <verkoopPrijs>20</verkoopPrijs>
-        <aantal>1</aantal>
+        <aantal>3</aantal>
         <type>V-Brakes</type>
     </rem>
     <licht>
@@ -45,7 +45,7 @@
         <omschrijving>LED Licht</omschrijving>
         <inkoopPrijs>20</inkoopPrijs>
         <verkoopPrijs>20</verkoopPrijs>
-        <aantal>1</aantal>
+        <aantal>5</aantal>
         <type>Smart</type>
     </licht>
     <basisonderdelen>
@@ -54,7 +54,17 @@
         <omschrijving>Standaard set</omschrijving>
         <inkoopPrijs>60</inkoopPrijs>
         <verkoopPrijs>60</verkoopPrijs>
-        <aantal>8</aantal>
+        <aantal>12</aantal>
         <type>Type 1</type>
     </basisonderdelen>
+    <wiel>
+        <iD>WIE2</iD>
+        <naam>Wielen</naam>
+        <omschrijving>DeWielenVanDeFietsVanPietVanPa</omschrijving>
+        <inkoopPrijs>10</inkoopPrijs>
+        <verkoopPrijs>10</verkoopPrijs>
+        <aantal>9</aantal>
+        <maat>universeel</maat>
+        <type>Standaard</type>
+    </wiel>
 </stock>

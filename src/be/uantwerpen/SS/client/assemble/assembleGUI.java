@@ -20,6 +20,7 @@ public class assembleGUI extends JFrame{
     
     public assembleGUI(String kader, String wiel, String rem, String licht, String zadel)
     {
+    	System.out.println("assebmele" + kader + wiel +rem +licht +zadel);
     	panelC = new ImagePanel(new ImageIcon("fiets/volledig.png").getImage());
     	
         setPreferredSize(new Dimension(600, 400));
@@ -40,7 +41,7 @@ public class assembleGUI extends JFrame{
     }
 
     private void put_weel(String format) {
-    	if(format == "good"){
+    	if(format !=null){
 	    	panelW1 = new ImagePanel(new ImageIcon("fiets/wielGood.png").getImage()); 
 	    	panelW2 = new ImagePanel(new ImageIcon("fiets/wielGood.png").getImage()); 
     	}
@@ -59,7 +60,7 @@ public class assembleGUI extends JFrame{
     }
     
     public void put_base(String format) {
-    	if(format == "good"){
+    	if(format !=null){
     		panelK = new ImagePanel(new ImageIcon("fiets/kaderGood.png").getImage()); 
     	}
     	else{
@@ -72,7 +73,7 @@ public class assembleGUI extends JFrame{
     }
     
     private void put_licht(String format) {
-    	if(format == "good"){
+    	if(format !=null){
     		panelL = new ImagePanel(new ImageIcon("fiets/lichtFGood.png").getImage()); 
     	}
     	else{
@@ -85,7 +86,7 @@ public class assembleGUI extends JFrame{
     }
     
     private void put_rem(String format) {
-    	if(format == "good"){
+    	if(format !=null){
     		panelR = new ImagePanel(new ImageIcon("fiets/remGood.png").getImage()); 
     	}
     	else{
@@ -98,7 +99,7 @@ public class assembleGUI extends JFrame{
 	}
 
     private void put_zadel(String format) {
-    	if(format == "good"){
+    	if(format !=null){
     		panelZ = new ImagePanel(new ImageIcon("fiets/zadelGood.png").getImage()); 
     	}
     	else{

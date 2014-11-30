@@ -15,6 +15,27 @@ public class Klant {
 	public Klant(){
 	}
 	
+	/**
+	 * @return the naam
+	 */
+	public String getNaam() {
+		return naam;
+	}
+
+	/**
+	 * @return the nummer
+	 */
+	public String getNummer() {
+		return nummer;
+	}
+
+	/**
+	 * @return the adres
+	 */
+	public String getAdres() {
+		return adres;
+	}
+
 	public Klant (String naam, String nummer, String adres){
 		this.naam = naam;
 		this.nummer = nummer;

@@ -44,16 +44,19 @@ public class GuiView extends JFrame {
 	private JComboBox<String> comboSelectType;
 	private JButton btnMoreStock;
 	private JButton btnLessStock;
-	private JButton btnEditDescription;
-	private JButton btnEditType;
-	private JButton btnEditID;
+	private JButton btnEdit;
 	private JButton btnAddItemStock;
+	private JButton btnNewItemStock;
 	private JButton btnRemoveItemStock;
 	private JTextField txtPriceBuy;
 	private JFormattedTextField txtValueInput;
 	private NumberFormat amountFormat;
 	private JTextField txtDescription;
 	private JLabel lblValueProduct;
+	private JLabel lblAantal;
+	private JLabel lblAk;
+	private JLabel lblVk;
+	
 	private JLabel lblDescription;
 	private JLabel lblType;
 	private JLabel lblID;
@@ -120,6 +123,8 @@ public class GuiView extends JFrame {
 		contentPane.add(stockPane, BorderLayout.NORTH);
 		contentPane.add(assamblerPane, BorderLayout.CENTER);
 	    contentPane.add(northPane, BorderLayout.SOUTH);
+		
+	
 	}
 	
 	private void guiInit() {
@@ -219,7 +224,7 @@ public class GuiView extends JFrame {
 	private void guiStock() {
 		
 		comboID = new JComboBox<>();
-		comboID.setBounds(22, 21, 112, 25);
+		comboID.setBounds(10, 21, 106, 25);
 		comboID.addItem("");
 		comboID.setActionCommand("comboID");
 		comboID.addActionListener(new ActionListenerControl());
@@ -227,7 +232,7 @@ public class GuiView extends JFrame {
 		
 		comboSelectType = new JComboBox<>();
 		comboSelectType.setEditable(true);
-		comboSelectType.setBounds(235, 101, 150, 22);
+		comboSelectType.setBounds(259, 100, 158, 22);
 		comboSelectType.addItem("Kader");
 		comboSelectType.addItem("Wielen");
 		comboSelectType.addItem("Remmen");
@@ -246,7 +251,7 @@ public class GuiView extends JFrame {
 		
 		comboSelectID = new JComboBox<>();
 		comboSelectID.setEditable(true);
-		comboSelectID.setBounds(235, 126, 150, 25);
+		comboSelectID.setBounds(259, 125, 158, 25);
 		comboSelectID.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -258,28 +263,40 @@ public class GuiView extends JFrame {
         });
 		stockPane.add(comboSelectID);
 		
+		lblAantal = new JLabel("Aantal");
+		lblAantal.setBounds(460, 19, 67, 25);
+		stockPane.add(lblAantal);
+		
+		lblAk = new JLabel("AK");
+		lblAk.setBounds(259, 20, 21, 25);
+		stockPane.add(lblAk);
+		
+		lblVk = new JLabel("VK");
+		lblVk.setBounds(335, 20, 21, 25);
+		stockPane.add(lblVk);
+		
 		//-----------------------------------
 		lblValueProduct = new JLabel("Prijs");
-		lblValueProduct.setBounds(160, 20, 100, 25);
+		lblValueProduct.setBounds(173, 20, 41, 25);
 		stockPane.add(lblValueProduct);
 		
 		txtPriceBuy = new JTextField();
-		txtPriceBuy.setBounds(235, 20, 67, 25);
+		txtPriceBuy.setBounds(278, 20, 54, 25);
 		stockPane.add(txtPriceBuy);
 		
 		btnMoreStock = new JButton("+");
-		btnMoreStock.setBounds(403, 20, 30, 25);
+		btnMoreStock.setBounds(427, 44, 41, 25);
 		btnMoreStock.setActionCommand("plus");
 		//btnLessStock.setActionCommand("veranderAantal");
 		btnMoreStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnMoreStock);
 		
 		txtPriceSell = new JTextField();
-		txtPriceSell.setBounds(318, 20, 67, 25);
+		txtPriceSell.setBounds(355, 19, 62, 25);
 		stockPane.add(txtPriceSell);
 		
 		btnLessStock = new JButton("-");
-		btnLessStock.setBounds(438, 20, 30, 25);
+		btnLessStock.setBounds(472, 44, 41, 25);
 		btnLessStock.setActionCommand("min");
 		//btnLessStock.setActionCommand("veranderAantal");
 		btnLessStock.addActionListener(new ActionListenerControl());
@@ -288,51 +305,51 @@ public class GuiView extends JFrame {
 		amountFormat = NumberFormat.getNumberInstance();
 		txtValueInput = new JFormattedTextField(amountFormat);
 		txtValueInput.setText("0");
-		txtValueInput.setBounds(473, 20, 30, 25);
+		txtValueInput.setBounds(523, 44, 41, 25);
 		stockPane.add(txtValueInput);
 		
 		//-----------------------------------
 		lblDescription = new JLabel("Omschrijving");
-		lblDescription.setBounds(160, 45, 100, 25);
+		lblDescription.setBounds(173, 45, 87, 25);
 		stockPane.add(lblDescription);
 		
 		txtDescription = new JTextField();
-		txtDescription.setBounds(235, 45, 150, 50);
+		txtDescription.setBounds(259, 51, 158, 43);
 		
 		stockPane.add(txtDescription);
 		
-		btnEditDescription = new JButton("bewerk");
-		btnEditDescription.setBounds(403, 45, 100, 25);
-		stockPane.add(btnEditDescription);
+		btnEdit = new JButton("bewerken");
+		btnEdit.setBackground(Color.CYAN);
+		btnEdit.setActionCommand("editProduct");
+		btnEdit.addActionListener(new ActionListenerControl());
+		btnEdit.setBounds(585, 66, 100, 34);
+		stockPane.add(btnEdit);
 		//-----------------------------------
 		lblType = new JLabel("Type");
-		lblType.setBounds(160, 100, 100, 25);
+		lblType.setBounds(173, 99, 100, 25);
 		stockPane.add(lblType);
-		
-		btnEditType = new JButton("bewerk");
-		btnEditType.setBounds(403, 100, 100, 25);
-		stockPane.add(btnEditType);
 		//-----------------------------------
 		lblID = new JLabel("ID");
-		lblID.setBounds(160, 125, 100, 25);
+		lblID.setBounds(173, 125, 100, 25);
 		stockPane.add(lblID);
 		
-		btnEditID = new JButton("bewerk");
-		btnEditID.setBounds(403, 125, 100, 25);
-		stockPane.add(btnEditID);
-		
 		//-----------------------------------
+		btnNewItemStock = new JButton("N");
+		btnNewItemStock.addActionListener(new ActionListenerControl());
+		btnNewItemStock.setActionCommand("newProduct");
+		btnNewItemStock.setBounds(112, 21, 51, 25);
+		stockPane.add(btnNewItemStock);
 
 		btnAddItemStock = new JButton("toevoegen");
 		btnAddItemStock.setBackground(Color.GREEN);
-		btnAddItemStock.setBounds(540, 20, 100, 50);
+		btnAddItemStock.setBounds(585, 19, 100, 36);
 		btnAddItemStock.setActionCommand("addProduct");
 		btnAddItemStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnAddItemStock);
 		
 		btnRemoveItemStock = new JButton("verwijderen");
 		btnRemoveItemStock.setBackground(Color.RED);
-		btnRemoveItemStock.setBounds(540, 100, 100, 50);
+		btnRemoveItemStock.setBounds(585, 114, 100, 36);
 		btnRemoveItemStock.setActionCommand("removeProduct");
 		btnRemoveItemStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnRemoveItemStock);
@@ -389,7 +406,7 @@ public class GuiView extends JFrame {
 	
 	private void guiClient() {
 		lstLog = new JList<String>(modelLog);
-		lstLog.setBounds(24, 20, 520, 120);
+		lstLog.setBounds(24, 20, 526, 120);
 	    logPane.add(lstLog);
 
 		btnAssemble = new JButton("Assemble");
@@ -422,7 +439,7 @@ public class GuiView extends JFrame {
 
 	    txtClientAdress = new JTextField();
 	    txtClientAdress.setText("Adres");
-	    txtClientAdress.setBounds(122, 75, 116, 22);    
+	    txtClientAdress.setBounds(12, 75, 226, 25);    
 	    txtClientAdress.setColumns(10);
 	    clientPane.add(txtClientAdress);
 	    
@@ -492,12 +509,22 @@ public class GuiView extends JFrame {
 	}
 	
 	public String get_editID() {
-		String ID = comboID.getSelectedItem().toString();
-		return ID;
+		if (comboID.getSelectedItem() != null) {
+			String ID = comboID.getSelectedItem().toString();
+			return ID;
+		}
+		else {
+			return null;
+		}
 	}
 
-	public String get_textValueProduct() {
+	public String getTextPriceBuy() {
 		String textFieldValue = txtPriceBuy.getText();
+		return textFieldValue;
+	}
+	
+	public String getTextPriceSell() {
+		String textFieldValue = txtPriceSell.getText();
 		return textFieldValue;
 	}
 	
@@ -581,6 +608,23 @@ public class GuiView extends JFrame {
 		modelBasic.clear();
 	}
 	
+	public void clearProductFields() {
+		txtPriceSell.setText("0");
+		txtPriceBuy.setText("0");
+		txtDescription.setText("Voer de eigenschappen in");
+		comboSelectID.setSelectedItem("ENTERID");
+		comboSelectType.setSelectedItem("Kies type");
+		txtValueInput.setText("0");
+	}
+	
+	public void ClearSaleReportList() {
+		modelLog.clear();
+	}
+	
+	public void clearIdListComboBox() {
+		comboID.removeAllItems();
+	}
+	
 	public void inc_dec_Product(String sign){
 		if(sign == "+"){
 			int amount = Integer.parseInt(txtValueInput.getText());
@@ -601,6 +645,4 @@ public class GuiView extends JFrame {
 		}
 		
 	}
-
-	
 }

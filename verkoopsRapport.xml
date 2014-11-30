@@ -2,107 +2,17 @@
 <verkoopsRapport>
     <verkoop>
         <klant>
-            <naam>Matthias de Schepper</naam>
+            <naam>Matthias</naam>
             <nummer>0485382693</nummer>
-            <adres>Eyermanstraat 29 Lokeren</adres>
+            <adres>Eyermanstraat 29 9160 LOKEREN</adres>
         </klant>
         <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
-        </fiets>
-    </verkoop>
-    <verkoop>
-        <klant>
-            <naam>Naam</naam>
-            <nummer>Nummer</nummer>
-            <adres>Adres</adres>
-        </klant>
-        <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
-        </fiets>
-    </verkoop>
-    <verkoop>
-        <klant>
-            <naam>Naam</naam>
-            <nummer>Nummer</nummer>
-            <adres>Adres</adres>
-        </klant>
-        <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
-        </fiets>
-    </verkoop>
-    <verkoop>
-        <klant>
-            <naam>Naam</naam>
-            <nummer>Nummer</nummer>
-            <adres>Adres</adres>
-        </klant>
-        <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
-        </fiets>
-    </verkoop>
-    <verkoop>
-        <klant>
-            <naam>Naam</naam>
-            <nummer>Nummer</nummer>
-            <adres>Adres</adres>
-        </klant>
-        <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
-        </fiets>
-    </verkoop>
-    <verkoop>
-        <klant>
-            <naam>Naam</naam>
-            <nummer>Nummer</nummer>
-            <adres>Adres</adres>
-        </klant>
-        <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
-        </fiets>
-    </verkoop>
-    <verkoop>
-        <klant>
-            <naam>Naam</naam>
-            <nummer>Nummer</nummer>
-            <adres>Adres</adres>
-        </klant>
-        <fiets>
-            <fietsNaam>mijn eerste fietsje</fietsNaam>
-            <onderdeleniDList>1</onderdeleniDList>
-            <onderdeleniDList>2</onderdeleniDList>
-            <onderdeleniDList>3</onderdeleniDList>
-            <onderdeleniDList>4</onderdeleniDList>
-            <onderdeleniDList>5</onderdeleniDList>
+            <fietsNaam>fietsNaam</fietsNaam>
+            <onderdeleniDList>KAD1</onderdeleniDList>
+            <onderdeleniDList>WIE1</onderdeleniDList>
+            <onderdeleniDList>REM1</onderdeleniDList>
+            <onderdeleniDList>LIC1</onderdeleniDList>
+            <onderdeleniDList>BAS1</onderdeleniDList>
         </fiets>
     </verkoop>
 </verkoopsRapport>

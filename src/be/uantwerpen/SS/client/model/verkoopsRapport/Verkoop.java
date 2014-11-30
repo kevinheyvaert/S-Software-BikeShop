@@ -11,8 +11,6 @@ public class Verkoop {
 	@XmlElement
 	private Fiets fiets;
 	
-	private int aantal;
-	
 	/* Constructor */
 	public Verkoop(Klant klant, Fiets fiets) {
 		this.fiets = fiets;
@@ -21,5 +19,20 @@ public class Verkoop {
 	
 	/* No-arg Constructor needed for XML marshalling */
 	public Verkoop() {
-	}		
+	}
+
+	/**
+	 * @return the fiets
+	 */
+	public Fiets getFiets() {
+		return fiets;
+	}
+
+	/**
+	 * @return the klant
+	 */
+	public Klant getKlant() {
+		return klant;
+	}
+
 }

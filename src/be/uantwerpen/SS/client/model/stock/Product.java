@@ -92,8 +92,10 @@ public abstract class Product {
 	public void Vewijderen(){
 	}
 	public void Vermeerderen(){
+		aantal++;
 	}
 	public void Verminderen(){
+		aantal--;
 	}
 		
 }
