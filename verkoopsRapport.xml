@@ -15,4 +15,49 @@
             <onderdeleniDList>BAS1</onderdeleniDList>
         </fiets>
     </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>fietsNaam</fietsNaam>
+            <onderdeleniDList>KAD1</onderdeleniDList>
+            <onderdeleniDList>WIE1</onderdeleniDList>
+            <onderdeleniDList>REM1</onderdeleniDList>
+            <onderdeleniDList>LIC1</onderdeleniDList>
+            <onderdeleniDList>BAS1</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>FIETS2</fietsNaam>
+            <onderdeleniDList>KAD1</onderdeleniDList>
+            <onderdeleniDList>WIE1</onderdeleniDList>
+            <onderdeleniDList>REM1</onderdeleniDList>
+            <onderdeleniDList>LIC1</onderdeleniDList>
+            <onderdeleniDList>BAS1</onderdeleniDList>
+        </fiets>
+    </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Naam</naam>
+            <nummer>Nummer</nummer>
+            <adres>Adres</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>FIETS3</fietsNaam>
+            <onderdeleniDList>KAD1</onderdeleniDList>
+            <onderdeleniDList>WIE1</onderdeleniDList>
+            <onderdeleniDList>REM1</onderdeleniDList>
+            <onderdeleniDList>LIC5</onderdeleniDList>
+            <onderdeleniDList>BAS1</onderdeleniDList>
+        </fiets>
+    </verkoop>
 </verkoopsRapport>

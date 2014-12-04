@@ -6,7 +6,7 @@
         <omschrijving>Eerste Wiel</omschrijving>
         <inkoopPrijs>40</inkoopPrijs>
         <verkoopPrijs>40</verkoopPrijs>
-        <aantal>9</aantal>
+        <aantal>5</aantal>
         <maat>universeel</maat>
         <type>Standaard</type>
     </wiel>
@@ -16,7 +16,7 @@
         <omschrijving>Eerste Kader</omschrijving>
         <inkoopPrijs>102</inkoopPrijs>
         <verkoopPrijs>102</verkoopPrijs>
-        <aantal>4</aantal>
+        <aantal>0</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
@@ -26,7 +26,7 @@
         <omschrijving>Tweede test Kader</omschrijving>
         <inkoopPrijs>145</inkoopPrijs>
         <verkoopPrijs>145</verkoopPrijs>
-        <aantal>9</aantal>
+        <aantal>8</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
@@ -36,7 +36,7 @@
         <omschrijving>Test Rem</omschrijving>
         <inkoopPrijs>20</inkoopPrijs>
         <verkoopPrijs>20</verkoopPrijs>
-        <aantal>3</aantal>
+        <aantal>13</aantal>
         <type>V-Brakes</type>
     </rem>
     <licht>
@@ -45,7 +45,7 @@
         <omschrijving>LED Licht</omschrijving>
         <inkoopPrijs>20</inkoopPrijs>
         <verkoopPrijs>20</verkoopPrijs>
-        <aantal>5</aantal>
+        <aantal>1</aantal>
         <type>Smart</type>
     </licht>
     <basisonderdelen>
@@ -54,7 +54,7 @@
         <omschrijving>Standaard set</omschrijving>
         <inkoopPrijs>60</inkoopPrijs>
         <verkoopPrijs>60</verkoopPrijs>
-        <aantal>12</aantal>
+        <aantal>6</aantal>
         <type>Type 1</type>
     </basisonderdelen>
     <wiel>
@@ -63,8 +63,17 @@
         <omschrijving>DeWielenVanDeFietsVanPietVanPa</omschrijving>
         <inkoopPrijs>10</inkoopPrijs>
         <verkoopPrijs>10</verkoopPrijs>
-        <aantal>9</aantal>
+        <aantal>7</aantal>
         <maat>universeel</maat>
         <type>Standaard</type>
     </wiel>
+    <licht>
+        <iD>LIC5</iD>
+        <naam>Lichten</naam>
+        <omschrijving>wit led</omschrijving>
+        <inkoopPrijs>10</inkoopPrijs>
+        <verkoopPrijs>10</verkoopPrijs>
+        <aantal>4</aantal>
+        <type>Smart</type>
+    </licht>
 </stock>

@@ -234,12 +234,13 @@ public class Main {
 				selectedBasisonderdelenId = currentProduct.getId();
 				currentProduct.Verminderen(); 
 			}
+			
 		}
 		
 		if (selectedKaderId!=null && selectedWielId!=null && selectedRemId!=null && selectedLichtId!=null && selectedBasisonderdelenId!=null) {
 			Klant klant = new Klant(strName, strNumber, strAddress);
 			String fietsNaam = "FIETS" + bikeShopVerkoopsRapport1.getVerkoopList().size();
-			Fiets fiets	= new Fiets("fietsNaam", selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
+			Fiets fiets	= new Fiets(fietsNaam, selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
 			bikeShopVerkoopsRapport1.addVerkoop(new Verkoop(klant, fiets));	
 			updateSalesReportView();
 		}
@@ -248,6 +249,7 @@ public class Main {
 			assembleGUI frameBike = new assembleGUI(selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
 			frameBike.setVisible(true);
 		}
+		updateProductSelectorView(); //FIXME om aantal in aantalveld stock up te daten na een assembly --> werkt niet :(
 	}
 	
 	private static String parseSelectedProduct(String productOmschrijving) {
