@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <stock>
-    <wiel>
-        <iD>WIE1</iD>
-        <naam>Wielen</naam>
-        <omschrijving>Eerste Wiel</omschrijving>
-        <inkoopPrijs>40</inkoopPrijs>
-        <verkoopPrijs>40</verkoopPrijs>
-        <aantal>5</aantal>
-        <maat>universeel</maat>
-        <type>Standaard</type>
-    </wiel>
     <kader>
         <iD>KAD1</iD>
         <naam>Kader</naam>
@@ -26,7 +16,7 @@
         <omschrijving>Tweede test Kader</omschrijving>
         <inkoopPrijs>145</inkoopPrijs>
         <verkoopPrijs>145</verkoopPrijs>
-        <aantal>8</aantal>
+        <aantal>3</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>
@@ -36,7 +26,7 @@
         <omschrijving>Test Rem</omschrijving>
         <inkoopPrijs>20</inkoopPrijs>
         <verkoopPrijs>20</verkoopPrijs>
-        <aantal>13</aantal>
+        <aantal>8</aantal>
         <type>V-Brakes</type>
     </rem>
     <licht>
@@ -45,7 +35,7 @@
         <omschrijving>LED Licht</omschrijving>
         <inkoopPrijs>20</inkoopPrijs>
         <verkoopPrijs>20</verkoopPrijs>
-        <aantal>1</aantal>
+        <aantal>9</aantal>
         <type>Smart</type>
     </licht>
     <basisonderdelen>
@@ -54,26 +44,56 @@
         <omschrijving>Standaard set</omschrijving>
         <inkoopPrijs>60</inkoopPrijs>
         <verkoopPrijs>60</verkoopPrijs>
-        <aantal>6</aantal>
+        <aantal>3</aantal>
         <type>Type 1</type>
     </basisonderdelen>
     <wiel>
         <iD>WIE2</iD>
         <naam>Wielen</naam>
-        <omschrijving>DeWielenVanDeFietsVanPietVanPa</omschrijving>
+        <omschrijving>Sportwiel</omschrijving>
         <inkoopPrijs>10</inkoopPrijs>
-        <verkoopPrijs>10</verkoopPrijs>
-        <aantal>7</aantal>
+        <verkoopPrijs>20</verkoopPrijs>
+        <aantal>13</aantal>
         <maat>universeel</maat>
         <type>Standaard</type>
     </wiel>
     <licht>
         <iD>LIC5</iD>
         <naam>Lichten</naam>
-        <omschrijving>wit led</omschrijving>
+        <omschrijving>LED licht met sensor</omschrijving>
         <inkoopPrijs>10</inkoopPrijs>
         <verkoopPrijs>10</verkoopPrijs>
-        <aantal>4</aantal>
+        <aantal>3</aantal>
         <type>Smart</type>
     </licht>
+    <wiel>
+        <iD>WIE3</iD>
+        <naam>Wielen</naam>
+        <omschrijving>MTB wiel</omschrijving>
+        <inkoopPrijs>30</inkoopPrijs>
+        <verkoopPrijs>50</verkoopPrijs>
+        <aantal>7</aantal>
+        <maat>universeel</maat>
+        <type>Standaard</type>
+    </wiel>
+    <wiel>
+        <iD>WIE1</iD>
+        <naam>Wielen</naam>
+        <omschrijving>Wiel 28" Stadsfiiets</omschrijving>
+        <inkoopPrijs>30</inkoopPrijs>
+        <verkoopPrijs>60</verkoopPrijs>
+        <aantal>3</aantal>
+        <maat>universeel</maat>
+        <type>Standaard</type>
+    </wiel>
+    <wiel>
+        <iD>WIE4</iD>
+        <naam>Wielen</naam>
+        <omschrijving>Rolstoelwiel</omschrijving>
+        <inkoopPrijs>100</inkoopPrijs>
+        <verkoopPrijs>150</verkoopPrijs>
+        <aantal>2</aantal>
+        <maat>universeel</maat>
+        <type>Standaard</type>
+    </wiel>
 </stock>

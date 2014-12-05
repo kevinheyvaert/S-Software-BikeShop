@@ -60,4 +60,19 @@
             <onderdeleniDList>BAS1</onderdeleniDList>
         </fiets>
     </verkoop>
+    <verkoop>
+        <klant>
+            <naam>Piet VanPa</naam>
+            <nummer>0476675</nummer>
+            <adres>Opdentop 1 BERGEN</adres>
+        </klant>
+        <fiets>
+            <fietsNaam>FIETS4</fietsNaam>
+            <onderdeleniDList>KAD2</onderdeleniDList>
+            <onderdeleniDList>WIE3</onderdeleniDList>
+            <onderdeleniDList>REM1</onderdeleniDList>
+            <onderdeleniDList>LIC1</onderdeleniDList>
+            <onderdeleniDList>BAS1</onderdeleniDList>
+        </fiets>
+    </verkoop>
 </verkoopsRapport>

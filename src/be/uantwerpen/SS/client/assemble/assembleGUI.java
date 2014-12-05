@@ -1,10 +1,17 @@
 package be.uantwerpen.SS.client.assemble;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.SystemColor;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class assembleGUI extends JFrame{
 	public static final long serialVersionUID = 1L; 
@@ -18,11 +25,11 @@ public class assembleGUI extends JFrame{
     private ImagePanel panelZ;
     private ImagePanel panelR;
     
+    
     public assembleGUI(String kader, String wiel, String rem, String licht, String zadel)
     {
     	System.out.println("assebmele" + kader + wiel +rem +licht +zadel);
     	panelC = new ImagePanel(new ImageIcon("fiets/volledig.png").getImage());
-    	
         setPreferredSize(new Dimension(600, 400));
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(lpane, BorderLayout.CENTER);
@@ -36,10 +43,21 @@ public class assembleGUI extends JFrame{
         put_rem(rem);
         put_licht(licht);
         put_zadel(zadel);
+        put_warning();
         
         pack();
     }
-
+    private void put_warning()
+    {
+	    String[] warning = new String[1];
+	    warning[0] = "Maak een keuze uit elke onderdelenlijst!";
+	    JList<Object> list = new JList<Object>(warning);
+		 list.setBackground(SystemColor.control);
+		list.setBounds(70, 320, 400, 20);
+		list.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lpane.add(new JLabel("Waarschuwing"));
+		lpane.add(list);
+    }
     private void put_weel(String format) {
     	if(format !=null){
 	    	panelW1 = new ImagePanel(new ImageIcon("fiets/wielGood.png").getImage()); 

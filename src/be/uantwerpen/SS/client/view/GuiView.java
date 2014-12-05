@@ -3,6 +3,7 @@ package be.uantwerpen.SS.client.view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -27,6 +28,7 @@ import java.awt.Color;
 import java.text.NumberFormat;
 
 import javax.swing.JList;
+import java.awt.Font;
 
 public class GuiView extends JFrame {
 	
@@ -232,7 +234,7 @@ public class GuiView extends JFrame {
 		
 		comboSelectType = new JComboBox<>();
 		comboSelectType.setEditable(true);
-		comboSelectType.setBounds(259, 100, 158, 22);
+		comboSelectType.setBounds(333, 102, 158, 22);
 		comboSelectType.addItem("Kader");
 		comboSelectType.addItem("Wielen");
 		comboSelectType.addItem("Remmen");
@@ -251,7 +253,7 @@ public class GuiView extends JFrame {
 		
 		comboSelectID = new JComboBox<>();
 		comboSelectID.setEditable(true);
-		comboSelectID.setBounds(259, 125, 158, 25);
+		comboSelectID.setBounds(333, 127, 158, 25);
 		comboSelectID.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -264,11 +266,11 @@ public class GuiView extends JFrame {
 		stockPane.add(comboSelectID);
 		
 		lblAantal = new JLabel("Aantal");
-		lblAantal.setBounds(460, 19, 67, 25);
+		lblAantal.setBounds(534, 21, 67, 25);
 		stockPane.add(lblAantal);
 		
 		lblAk = new JLabel("AK");
-		lblAk.setBounds(259, 20, 21, 25);
+		lblAk.setBounds(411, 21, 21, 25);
 		stockPane.add(lblAk);
 		
 		lblVk = new JLabel("VK");
@@ -277,26 +279,26 @@ public class GuiView extends JFrame {
 		
 		//-----------------------------------
 		lblValueProduct = new JLabel("Prijs");
-		lblValueProduct.setBounds(173, 20, 41, 25);
+		lblValueProduct.setBounds(247, 21, 41, 25);
 		stockPane.add(lblValueProduct);
 		
 		txtPriceBuy = new JTextField();
-		txtPriceBuy.setBounds(278, 20, 54, 25);
+		txtPriceBuy.setBounds(352, 22, 54, 25);
 		stockPane.add(txtPriceBuy);
 		
 		btnMoreStock = new JButton("+");
-		btnMoreStock.setBounds(427, 44, 41, 25);
+		btnMoreStock.setBounds(501, 46, 41, 25);
 		btnMoreStock.setActionCommand("plus");
 		//btnLessStock.setActionCommand("veranderAantal");
 		btnMoreStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnMoreStock);
 		
 		txtPriceSell = new JTextField();
-		txtPriceSell.setBounds(355, 19, 62, 25);
+		txtPriceSell.setBounds(429, 21, 62, 25);
 		stockPane.add(txtPriceSell);
 		
 		btnLessStock = new JButton("-");
-		btnLessStock.setBounds(472, 44, 41, 25);
+		btnLessStock.setBounds(546, 46, 41, 25);
 		btnLessStock.setActionCommand("min");
 		//btnLessStock.setActionCommand("veranderAantal");
 		btnLessStock.addActionListener(new ActionListenerControl());
@@ -305,51 +307,60 @@ public class GuiView extends JFrame {
 		amountFormat = NumberFormat.getNumberInstance();
 		txtValueInput = new JFormattedTextField(amountFormat);
 		txtValueInput.setText("0");
-		txtValueInput.setBounds(523, 44, 41, 25);
+		txtValueInput.setBounds(597, 46, 41, 25);
 		stockPane.add(txtValueInput);
 		
 		//-----------------------------------
 		lblDescription = new JLabel("Omschrijving");
-		lblDescription.setBounds(173, 45, 87, 25);
+		lblDescription.setBounds(247, 47, 87, 25);
 		stockPane.add(lblDescription);
 		
 		txtDescription = new JTextField();
-		txtDescription.setBounds(259, 51, 158, 43);
+		txtDescription.setBounds(333, 53, 158, 43);
 		
 		stockPane.add(txtDescription);
 		
-		btnEdit = new JButton("bewerken");
+		btnEdit = new JButton("Bewerken");
+		btnEdit.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnEdit.setBackground(Color.CYAN);
+		btnEdit.setContentAreaFilled(false);
+		btnEdit.setOpaque(true);
 		btnEdit.setActionCommand("editProduct");
 		btnEdit.addActionListener(new ActionListenerControl());
-		btnEdit.setBounds(585, 66, 100, 34);
+		btnEdit.setBounds(659, 68, 100, 34);
 		stockPane.add(btnEdit);
 		//-----------------------------------
 		lblType = new JLabel("Type");
-		lblType.setBounds(173, 99, 100, 25);
+		lblType.setBounds(247, 101, 100, 25);
 		stockPane.add(lblType);
 		//-----------------------------------
 		lblID = new JLabel("ID");
-		lblID.setBounds(173, 125, 100, 25);
+		lblID.setBounds(247, 127, 100, 25);
 		stockPane.add(lblID);
 		
 		//-----------------------------------
-		btnNewItemStock = new JButton("N");
+		btnNewItemStock = new JButton("Nieuw");
 		btnNewItemStock.addActionListener(new ActionListenerControl());
 		btnNewItemStock.setActionCommand("newProduct");
-		btnNewItemStock.setBounds(112, 21, 51, 25);
+		btnNewItemStock.setBounds(112, 20, 67, 27);
 		stockPane.add(btnNewItemStock);
 
-		btnAddItemStock = new JButton("toevoegen");
+		btnAddItemStock = new JButton("Toevoegen");
+		btnAddItemStock.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnAddItemStock.setBackground(Color.GREEN);
-		btnAddItemStock.setBounds(585, 19, 100, 36);
+		btnAddItemStock.setContentAreaFilled(false);
+		btnAddItemStock.setOpaque(true);
+		btnAddItemStock.setBounds(659, 21, 100, 36);
 		btnAddItemStock.setActionCommand("addProduct");
 		btnAddItemStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnAddItemStock);
 		
-		btnRemoveItemStock = new JButton("verwijderen");
+		btnRemoveItemStock = new JButton("Verwijderen");
+		btnRemoveItemStock.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRemoveItemStock.setBackground(Color.RED);
-		btnRemoveItemStock.setBounds(585, 114, 100, 36);
+		btnRemoveItemStock.setContentAreaFilled(false);
+		btnRemoveItemStock.setOpaque(true);
+		btnRemoveItemStock.setBounds(659, 116, 100, 36);
 		btnRemoveItemStock.setActionCommand("removeProduct");
 		btnRemoveItemStock.addActionListener(new ActionListenerControl());
 		stockPane.add(btnRemoveItemStock);
@@ -456,6 +467,17 @@ public class GuiView extends JFrame {
         JList<Object> list = new JList<Object>(items);
         JPanel panel = new JPanel(new GridLayout(0, 1));
         panel.add(new JLabel("Makers:"));
+        panel.add(list);
+        JOptionPane.showMessageDialog(null, panel);
+    }
+	
+	public void warningMessage(String warning) {
+        String[] items = new String[1];
+        items[0] = warning;
+        JList<Object> list = new JList<Object>(items);
+		list.setBackground(SystemColor.control);
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Waarschuwing"));
         panel.add(list);
         JOptionPane.showMessageDialog(null, panel);
     }

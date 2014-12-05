@@ -15,6 +15,9 @@ public class Fiets {
 	private String fietsNaam;
 	@XmlElement
 	private List<String> onderdeleniDList;
+	
+	public Fiets(){
+	}
 
 	public Fiets(String fietsNaam, String kaderId, String wielId, String remId, String lichtId, String basisonderdelenId){
 		this.fietsNaam = fietsNaam;
@@ -33,9 +36,6 @@ public class Fiets {
 		return fietsNaam;
 	}
 
-	public Fiets(){
-	}
-	
 	public void addOnderdeel(String iD) {
 		onderdeleniDList.add(iD);
 	}

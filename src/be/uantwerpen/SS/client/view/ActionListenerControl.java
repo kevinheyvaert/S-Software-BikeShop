@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import be.uantwerpen.SS.client.assemble.assembleGUI;
+import be.uantwerpen.SS.client.facade.BikeShop;
 
 class ActionListenerControl implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
@@ -11,31 +12,29 @@ class ActionListenerControl implements ActionListener {
 			System.exit(0);
 		}
 		else if(event.getActionCommand().equals("plus")){
-			Main.incProduct();
-			Main.updateProductSelectorView();
+			BikeShop.incProduct();
 		}
 		else if(event.getActionCommand().equals("min")){
-			Main.decProduct();
-			Main.updateProductSelectorView();
+			BikeShop.decProduct();
 		}
 		else if(event.getActionCommand().equals("newProduct")){
 			System.out.println("product New");
-			Main.newProduct();
-			Main.enable_combo();
+			BikeShop.newProduct();
+			BikeShop.enable_combo();
 		}
 		else if(event.getActionCommand().equals("addProduct")){
 			System.out.println("product add");
-			Main.addProduct();
-			Main.enable_combo();
+			BikeShop.addProduct();
+			BikeShop.enable_combo();
 		}
 		else if(event.getActionCommand().equals("editProduct")){
 			System.out.println("product edit");
-			Main.changeProduct();
-			Main.enable_combo();
+			BikeShop.changeProduct();
+			BikeShop.enable_combo();
 		}
 		else if(event.getActionCommand().equals("removeProduct")){
 			System.out.println("product remove");
-			Main.removeProduct();
+			BikeShop.removeProduct();
 		}
 		else if(event.getActionCommand().equals("credits")){
 			System.out.println("credit");
@@ -46,20 +45,19 @@ class ActionListenerControl implements ActionListener {
 		}
 		else if(event.getActionCommand().equals("assemble")){
 			System.out.println("bikeFrame");
-			Main.MakeBike();
-			String kader = Main.getKader();
-			String wiel = Main.getWiel();
-			String rem = Main.getRem();
-			String licht = Main.getLicht();
-			String basis = Main.getBasisOnderdelen();
-			Main.updateProductSelectorView();
+			BikeShop.makeBike();
+			String kader = BikeShop.getKader();
+			String wiel = BikeShop.getWiel();
+			String rem = BikeShop.getRem();
+			String licht = BikeShop.getLicht();
+			String basis = BikeShop.getBasisOnderdelen();
 		}
 		
 		else if(event.getActionCommand().equals("comboID")){
-			Main.load_id_data();
+			BikeShop.load_id_data();
 		}
 		else if(event.getActionCommand().equals("save")){
-			Main.saveXml();
+			BikeShop.saveXml();
 		}
     }
 }

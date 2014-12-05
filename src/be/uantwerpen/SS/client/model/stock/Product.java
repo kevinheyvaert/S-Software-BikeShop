@@ -94,8 +94,15 @@ public abstract class Product {
 	public void Vermeerderen(){
 		aantal++;
 	}
-	public void Verminderen(){
-		aantal--;
+	public boolean Verminderen(){
+		if (aantal>0) {
+			aantal--;
+			return false;
+		} 
+		else {
+			return true;
+		}
+		
 	}
 		
 }

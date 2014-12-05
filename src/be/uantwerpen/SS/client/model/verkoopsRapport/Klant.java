@@ -15,6 +15,12 @@ public class Klant {
 	public Klant(){
 	}
 	
+	public Klant (String naam, String nummer, String adres){
+		this.naam = naam;
+		this.nummer = nummer;
+		this.adres = adres;
+	}
+	
 	/**
 	 * @return the naam
 	 */
@@ -36,10 +42,5 @@ public class Klant {
 		return adres;
 	}
 
-	public Klant (String naam, String nummer, String adres){
-		this.naam = naam;
-		this.nummer = nummer;
-		this.adres = adres;
-	}
 
 }
