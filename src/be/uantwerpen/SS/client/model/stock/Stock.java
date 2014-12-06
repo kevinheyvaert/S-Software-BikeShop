@@ -43,7 +43,7 @@ public class Stock implements Serializable {
 		return productList;
 	}
 	
-	public List<Product> getListOfInstance(Class classToMatch) {
+	public List<Product> getListOfInstance(Class<?> classToMatch) {
 		List<Product> filteredList = new ArrayList<Product>();
 		if (classToMatch.equals(Product.class)) { //fast way to return complete list of Products without iterating
 			return productList;
@@ -59,7 +59,7 @@ public class Stock implements Serializable {
 	}
 
 	
-	public int getNumberOfInstance(Class classToMatch) {
+	public int getNumberOfInstance(Class<?> classToMatch) {
 		int numberOfInstances=0;
 		if (classToMatch.equals(Product.class)) { //fast way to count total number of Products without iterating
 			numberOfInstances = productList.size();

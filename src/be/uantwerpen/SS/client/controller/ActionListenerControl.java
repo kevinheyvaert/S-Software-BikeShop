@@ -1,12 +1,12 @@
-package be.uantwerpen.SS.client.view;
+package be.uantwerpen.SS.client.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import be.uantwerpen.SS.client.assemble.assembleGUI;
 import be.uantwerpen.SS.client.facade.BikeShop;
+import be.uantwerpen.SS.client.view.GuiView;
 
-class ActionListenerControl implements ActionListener {
+public class ActionListenerControl implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("exitProgram")){
 			System.exit(0);
@@ -46,11 +46,6 @@ class ActionListenerControl implements ActionListener {
 		else if(event.getActionCommand().equals("assemble")){
 			System.out.println("bikeFrame");
 			BikeShop.makeBike();
-			String kader = BikeShop.getKader();
-			String wiel = BikeShop.getWiel();
-			String rem = BikeShop.getRem();
-			String licht = BikeShop.getLicht();
-			String basis = BikeShop.getBasisOnderdelen();
 		}
 		
 		else if(event.getActionCommand().equals("comboID")){

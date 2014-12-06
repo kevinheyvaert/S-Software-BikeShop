@@ -14,6 +14,8 @@ import be.uantwerpen.SS.client.utilities.VerkoopsRapportMarshaller;
 
 @XmlRootElement(name = "verkoopsRapport")
 public class VerkoopsRapport implements Serializable {
+	private static final long serialVersionUID = 1972034363373865363L;
+	
 	private List<Verkoop> verkoopList;
 
 	public VerkoopsRapport() {

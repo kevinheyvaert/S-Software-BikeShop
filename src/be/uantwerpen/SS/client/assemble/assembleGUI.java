@@ -2,7 +2,6 @@ package be.uantwerpen.SS.client.assemble;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.SystemColor;
 
 import javax.swing.ImageIcon;
@@ -10,8 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class assembleGUI extends JFrame{
 	public static final long serialVersionUID = 1L; 

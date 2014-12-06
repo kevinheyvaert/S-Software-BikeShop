@@ -30,6 +30,8 @@ import java.text.NumberFormat;
 import javax.swing.JList;
 import java.awt.Font;
 
+import be.uantwerpen.SS.client.controller.ActionListenerControl;
+
 public class GuiView extends JFrame {
 	
 	/**

@@ -1,13 +1,6 @@
 package be.uantwerpen.SS.client.view;
 
-import java.awt.EventQueue;
-import java.util.List;
-
-import javax.sound.sampled.Line;
-import javax.swing.UIManager;
-
 import be.uantwerpen.SS.client.facade.BikeShop;
-import be.uantwerpen.SS.client.view.GuiView;
 
 public class Main {
 	public static boolean debug;

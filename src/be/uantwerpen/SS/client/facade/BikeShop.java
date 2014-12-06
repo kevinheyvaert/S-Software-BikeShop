@@ -17,7 +17,6 @@ import be.uantwerpen.SS.client.model.verkoopsRapport.Klant;
 import be.uantwerpen.SS.client.model.verkoopsRapport.Verkoop;
 import be.uantwerpen.SS.client.model.verkoopsRapport.VerkoopsRapport;
 import be.uantwerpen.SS.client.view.GuiView;
-import be.uantwerpen.SS.client.view.Main;
 
 public class BikeShop {
 	private static int aantalFietsen;
@@ -188,10 +187,9 @@ public class BikeShop {
 	 */
 	public static void decProduct() {
 		
-		int amount = Integer.parseInt(frame.get_textValue());
-		amount -=1;
-		
-		String strAmount = ""+amount;
+		//int amount = Integer.parseInt(frame.get_textValue());
+		//amount -=1;
+		//String strAmount = ""+amount;
 		frame.inc_dec_Product("-");
 		changeProduct();	
 	}
@@ -201,10 +199,10 @@ public class BikeShop {
 	 */
 	public static void incProduct() {
 		
-		int amount = Integer.parseInt(frame.get_textValue());
-		amount +=1;
+		//int amount = Integer.parseInt(frame.get_textValue());
+		//amount +=1;
 		
-		String strAmount = ""+amount;
+		//String strAmount = ""+amount;
 	
 		frame.inc_dec_Product("+");
 		changeProduct();
