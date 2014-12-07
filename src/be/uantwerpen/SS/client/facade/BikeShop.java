@@ -261,14 +261,18 @@ public class BikeShop {
 			}
 		}
 		
-		
-		
 		if (maakFiets == true && voorraadProbleem == false) {
-			Klant klant = new Klant(strName, strNumber, strAddress);
-			String fietsNaam = "FIETS" + bikeShopVerkoopsRapport1.getVerkoopList().size();
-			Fiets fiets	= new Fiets(fietsNaam, selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
-			bikeShopVerkoopsRapport1.addVerkoop(new Verkoop(klant, fiets));	
-			updateSalesReportView();
+			if(checkCredits(strName, strNumber, strAddress)){
+				frame.warningMessage("Gelieve alle gegevens van de klant in te vullen!");
+			}
+			else{
+				Klant klant = new Klant(strName, strNumber, strAddress);
+				String fietsNaam = "FIETS" + bikeShopVerkoopsRapport1.getVerkoopList().size();
+				Fiets fiets	= new Fiets(fietsNaam, selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
+				bikeShopVerkoopsRapport1.addVerkoop(new Verkoop(klant, fiets));	
+				updateSalesReportView();
+			}
+			
 		}
 		else if (voorraadProbleem){
 			frame.warningMessage("Je hebt onderdelen gekozen waar geen voorraad van is, kies een alternatief!");
@@ -346,4 +350,14 @@ public class BikeShop {
 		}		
 	}
 
+	private static boolean checkCredits(String strName, String strNumber, String strAddress){
+		if(strName.contentEquals("Naam") || strName.isEmpty())
+			return true;
+		else if(strNumber.contentEquals("Nummer") || strNumber.isEmpty())
+			return true;
+		else if(strAddress.contentEquals("Adres") || strAddress.isEmpty())
+			return true;
+		else
+			return false;
+	}
 }
