@@ -223,35 +223,47 @@ public class BikeShop {
 		String selectedBaisonderdelenOmschrijving = parseSelectedProduct(frame.get_lstSelected_basisonderdelen());
 		String selectedRemId=null, selectedKaderId=null, selectedWielId= null, selectedLichtId=null, selectedBasisonderdelenId=null;
 		boolean voorraadProbleem = false;
+		boolean maakFiets = false;
+		
+		if (selectedRemOmschrijving!=null && selectedKaderOmschrijving!=null && selectedWielOmschrijving!=null && selectedLichtOmschrijving!=null && selectedBaisonderdelenOmschrijving!=null)
+			maakFiets = true;
+		else
+			maakFiets = false;
 		
 		//beter zou zijn te iteraten over ID ipv op Omschrijving. Omschrijving is namelijk niet verplicht uniek. uniek maken?
 		for(int i=0; i < bikeShopStock1.getProductList().size(); i++) {
 			Product currentProduct = bikeShopStock1.getProductList().get(i);
+			
 			if (currentProduct.getOmschrijving().equals(selectedRemOmschrijving)) {
 				selectedRemId = currentProduct.getId();
-				if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (maakFiets)
+					if (currentProduct.Verminderen())voorraadProbleem = true;
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedKaderOmschrijving)) {
 				selectedKaderId = currentProduct.getId();
-				if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (maakFiets)
+					if (currentProduct.Verminderen()) voorraadProbleem = true; 
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedWielOmschrijving)) {
 				selectedWielId = currentProduct.getId();
-				if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (maakFiets)
+					if (currentProduct.Verminderen()) voorraadProbleem = true; 
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedLichtOmschrijving)) {
 				selectedLichtId = currentProduct.getId();
-				if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (maakFiets)
+					if (currentProduct.Verminderen()) voorraadProbleem = true; 
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedBaisonderdelenOmschrijving)) {
 				selectedBasisonderdelenId = currentProduct.getId();
-				if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (maakFiets)
+					if (currentProduct.Verminderen()) voorraadProbleem = true; 
 			}
 		}
 		
 		
 		
-		if (selectedKaderId!=null && selectedWielId!=null && selectedRemId!=null && selectedLichtId!=null && selectedBasisonderdelenId!=null && voorraadProbleem == false) {
+		if (maakFiets == true && voorraadProbleem == false) {
 			Klant klant = new Klant(strName, strNumber, strAddress);
 			String fietsNaam = "FIETS" + bikeShopVerkoopsRapport1.getVerkoopList().size();
 			Fiets fiets	= new Fiets(fietsNaam, selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
