@@ -16,7 +16,7 @@
         <omschrijving>Tweede test Kader</omschrijving>
         <inkoopPrijs>145</inkoopPrijs>
         <verkoopPrijs>145</verkoopPrijs>
-        <aantal>3</aantal>
+        <aantal>2</aantal>
         <graverenDefaultWaarde>false</graverenDefaultWaarde>
         <kleur>wit</kleur>
     </kader>

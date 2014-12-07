@@ -104,16 +104,16 @@ public class assembleGUI extends JFrame{
     private void put_rem(String format) {
     	if(format !=null){
     		panelRr = new ImagePanel(new ImageIcon("fiets/RemLGood.png").getImage()); 
-    		panelRl = new ImagePanel(new ImageIcon("fiets/RemRBad.png").getImage()); 
+    		panelRl = new ImagePanel(new ImageIcon("fiets/RemRGood.png").getImage()); 
     	}
     	else{
     		panelRr = new ImagePanel(new ImageIcon("fiets/RemLBad.png").getImage()); 
     		panelRl = new ImagePanel(new ImageIcon("fiets/RemRBad.png").getImage()); 
     	}
-    	panelRr.setBounds(0, 0, 0, 0);
+    	panelRr.setBounds(341, 111, 25, 24);
     	panelRr.setOpaque(true);
         panelRr.addMouseListener(new MyMouseListener("rem"));
-        panelRl.setBounds(0, 0, 0, 0);
+        panelRl.setBounds(121, 108, 25, 24);
     	panelRl.setOpaque(true);
         panelRl.addMouseListener(new MyMouseListener("rem")); 
         lpane.add(panelRr, new Integer(4), 0);

@@ -13,8 +13,4 @@ public class Main {
         BikeShop bikeShop1 = new BikeShop();
         bikeShop1.start();
 	}
-
-	
-
-	
 }
