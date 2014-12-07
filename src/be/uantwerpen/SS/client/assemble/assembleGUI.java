@@ -20,7 +20,8 @@ public class assembleGUI extends JFrame{
     private ImagePanel panelW2;
     private ImagePanel panelL;
     private ImagePanel panelZ;
-    private ImagePanel panelR;
+    private ImagePanel panelRr;
+    private ImagePanel panelRl;
     
     
     public assembleGUI(String kader, String wiel, String rem, String licht, String zadel)
@@ -102,15 +103,21 @@ public class assembleGUI extends JFrame{
     
     private void put_rem(String format) {
     	if(format !=null){
-    		panelR = new ImagePanel(new ImageIcon("fiets/remGood.png").getImage()); 
+    		panelRr = new ImagePanel(new ImageIcon("fiets/RemLGood.png").getImage()); 
+    		panelRl = new ImagePanel(new ImageIcon("fiets/RemRBad.png").getImage()); 
     	}
     	else{
-    		panelR = new ImagePanel(new ImageIcon("fiets/remBad.png").getImage()); 
+    		panelRr = new ImagePanel(new ImageIcon("fiets/RemLBad.png").getImage()); 
+    		panelRl = new ImagePanel(new ImageIcon("fiets/RemRBad.png").getImage()); 
     	}
-    	panelR.setBounds(0, 0, 0, 0);
-    	panelR.setOpaque(true);
-        panelR.addMouseListener(new MyMouseListener("rem")); 
-        lpane.add(panelR, new Integer(4), 0);
+    	panelRr.setBounds(0, 0, 0, 0);
+    	panelRr.setOpaque(true);
+        panelRr.addMouseListener(new MyMouseListener("rem"));
+        panelRl.setBounds(0, 0, 0, 0);
+    	panelRl.setOpaque(true);
+        panelRl.addMouseListener(new MyMouseListener("rem")); 
+        lpane.add(panelRr, new Integer(4), 0);
+        lpane.add(panelRl, new Integer(4), 0);
 	}
 
     private void put_zadel(String format) {

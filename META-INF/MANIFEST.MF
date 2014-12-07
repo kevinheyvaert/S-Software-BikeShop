@@ -1,0 +1,13 @@
+Manifest-Version: 1.7
+Bundle-ManifestVersion: 2
+Bundle-Name: S-Software-Bikeshop
+Bundle-SymbolicName: S-Software-Bikeshop
+Bundle-Version: 1.0.0.qualifier
+Export-Package: be.uantwerpen.SS.client.assemble,
+ be.uantwerpen.SS.client.controller,
+ be.uantwerpen.SS.client.facade,
+ be.uantwerpen.SS.client.model.stock,
+ be.uantwerpen.SS.client.model.verkoopsRapport,
+ be.uantwerpen.SS.client.utilities,
+ be.uantwerpen.SS.client.view
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
