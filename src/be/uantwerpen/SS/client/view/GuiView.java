@@ -127,8 +127,6 @@ public class GuiView extends JFrame {
 		contentPane.add(stockPane, BorderLayout.NORTH);
 		contentPane.add(assamblerPane, BorderLayout.CENTER);
 	    contentPane.add(northPane, BorderLayout.SOUTH);
-		
-	
 	}
 	
 	private void guiInit() {
