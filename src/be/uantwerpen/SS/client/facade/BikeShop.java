@@ -223,45 +223,43 @@ public class BikeShop {
 		String selectedBaisonderdelenOmschrijving = parseSelectedProduct(frame.get_lstSelected_basisonderdelen());
 		String selectedRemId=null, selectedKaderId=null, selectedWielId= null, selectedLichtId=null, selectedBasisonderdelenId=null;
 		boolean voorraadProbleem = false;
-		boolean maakFiets = false;
+		boolean allSelected = false;
 		
-		if (selectedRemOmschrijving!=null && selectedKaderOmschrijving!=null && selectedWielOmschrijving!=null && selectedLichtOmschrijving!=null && selectedBaisonderdelenOmschrijving!=null)
-			maakFiets = true;
-		else
-			maakFiets = false;
+		//alles geslecteerd?
+		if (selectedRemOmschrijving!=null && selectedKaderOmschrijving!=null && selectedWielOmschrijving!=null && selectedLichtOmschrijving!=null && selectedBaisonderdelenOmschrijving!=null) {
+			allSelected = true;
+		}
+		else {
+			allSelected = false;
+		}
 		
-		//beter zou zijn te iteraten over ID ipv op Omschrijving. Omschrijving is namelijk niet verplicht uniek. uniek maken?
+		//check stock
 		for(int i=0; i < bikeShopStock1.getProductList().size(); i++) {
 			Product currentProduct = bikeShopStock1.getProductList().get(i);
 			
 			if (currentProduct.getOmschrijving().equals(selectedRemOmschrijving)) {
 				selectedRemId = currentProduct.getId();
-				if (maakFiets)
-					if (currentProduct.Verminderen())voorraadProbleem = true;
+				if (currentProduct.getAantal() ==0 )voorraadProbleem = true;
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedKaderOmschrijving)) {
 				selectedKaderId = currentProduct.getId();
-				if (maakFiets)
-					if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (currentProduct.getAantal() ==0 )voorraadProbleem = true; 
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedWielOmschrijving)) {
 				selectedWielId = currentProduct.getId();
-				if (maakFiets)
-					if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (currentProduct.getAantal() ==0 )voorraadProbleem = true;
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedLichtOmschrijving)) {
 				selectedLichtId = currentProduct.getId();
-				if (maakFiets)
-					if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (currentProduct.getAantal() ==0 )voorraadProbleem = true;
 			}
 			else if (currentProduct.getOmschrijving().equals(selectedBaisonderdelenOmschrijving)) {
 				selectedBasisonderdelenId = currentProduct.getId();
-				if (maakFiets)
-					if (currentProduct.Verminderen()) voorraadProbleem = true; 
+				if (currentProduct.getAantal() ==0 )voorraadProbleem = true;
 			}
 		}
 		
-		if (maakFiets == true && voorraadProbleem == false) {
+		if (allSelected == true && voorraadProbleem == false) {
 			if(checkCredits(strName, strNumber, strAddress)){
 				frame.warningMessage("Gelieve alle gegevens van de klant in te vullen!");
 			}
@@ -270,6 +268,14 @@ public class BikeShop {
 				String fietsNaam = "FIETS" + bikeShopVerkoopsRapport1.getVerkoopList().size();
 				Fiets fiets	= new Fiets(fietsNaam, selectedKaderId, selectedWielId, selectedRemId, selectedLichtId, selectedBasisonderdelenId);
 				bikeShopVerkoopsRapport1.addVerkoop(new Verkoop(klant, fiets));	
+				for(int i=0; i < bikeShopStock1.getProductList().size(); i++) {
+					Product currentProduct = bikeShopStock1.getProductList().get(i);
+					if (currentProduct.getId().equals(selectedRemId)) currentProduct.Verminderen();
+					if (currentProduct.getId().equals(selectedKaderId)) currentProduct.Verminderen();
+					if (currentProduct.getId().equals(selectedWielId)) currentProduct.Verminderen();
+					if (currentProduct.getId().equals(selectedLichtId)) currentProduct.Verminderen();
+					if (currentProduct.getId().equals(selectedBasisonderdelenId)) currentProduct.Verminderen();
+				}
 				updateSalesReportView();
 			}
 			
